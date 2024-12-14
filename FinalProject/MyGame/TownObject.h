@@ -5,11 +5,11 @@
 
 class TownObject : public GameObject {
 
-	GLuint BGVAO;
-	GLuint BGTexture;
-
+	float size;
+	float randX;
 	float rotateSpeed;
 
+	GLuint fenceShader;
 public:
 	TownObject();
 	virtual ~TownObject();

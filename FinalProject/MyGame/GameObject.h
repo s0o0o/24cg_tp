@@ -27,10 +27,12 @@ public:
 	void setPosition(glm::vec3 position);
 	void setPosition(float x, float y, float z);	// 오버로딩
 
+
 	glm::vec3 getLook() const;
 	glm::vec3 getRight() const;
 
 	void rotateY(float degrees);
+	void rotateX(float degrees);
 
 	void move(glm::vec3 dir, float value);
 	void moveForward(float value);

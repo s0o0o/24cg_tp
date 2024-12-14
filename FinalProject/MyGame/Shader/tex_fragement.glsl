@@ -10,10 +10,10 @@ uniform sampler2D outSampler;
 
 uniform vec3 cameraPos;
 
-const float ambientLight = 0.5f;
-const vec3 lightColor = vec3(1.f, 0.93f, 1.f);	// 과제에선 uniform으로 해야할 것
+const float ambientLight = 1.f;
+uniform vec3 lightColor;
 
-const vec3 lightPos = vec3(20.f, 15.f, 0.f);
+const vec3 lightPos = vec3(5.f, 25.f, 0.f);
 
 void main()
 {

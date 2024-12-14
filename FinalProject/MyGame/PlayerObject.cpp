@@ -11,7 +11,7 @@ PlayerObject::PlayerObject()
 	isSPressed = false;
 	isDPressed = false;
 
-	moveSpeed = 5.f;
+	moveSpeed = 6.f;
 
 	initilize();
 
@@ -30,6 +30,7 @@ void PlayerObject::initilize()
 }
 
 float playerLimit = 2.f;
+float limitX = 22.f;
 
 void PlayerObject::update(float elapseTime)
 {
@@ -42,14 +43,24 @@ void PlayerObject::update(float elapseTime)
 
 		// X축과 Z축 범위를 체크
 		if (newPosition.z > -20.f + playerLimit && newPosition.z < 20.f - playerLimit &&
-			newPosition.x > -40.f + playerLimit && newPosition.x < 40.f - playerLimit) {
+			newPosition.x > -limitX + playerLimit && newPosition.x < limitX - playerLimit) {
 			dir += getLook(); // 범위를 초과하지 않으면 이동
 		}
 		else {
 			if (newPosition.z <= -20.f + playerLimit) dir.z = (-20.f + playerLimit) - worldTransform[3][2];
 			if (newPosition.z >= 20.f - playerLimit) dir.z = (20.f - playerLimit) - worldTransform[3][2];
-			if (newPosition.x <= -40.f + playerLimit) dir.x = (-40.f + playerLimit) - worldTransform[3][0];
-			if (newPosition.x >= 40.f - playerLimit) dir.x = (40.f - playerLimit) - worldTransform[3][0];
+			if (newPosition.x <= -limitX + playerLimit) dir.x = (-limitX + playerLimit) - worldTransform[3][0];
+			if (newPosition.x >= limitX - playerLimit) dir.x = (limitX - playerLimit) - worldTransform[3][0];
+		}
+
+		if (newPosition.z > -8.f && newPosition.z < 10.f &&
+			newPosition.x > -15.f && newPosition.x < 1.f) {
+			std::cout << "농장안에 들어옴" << std::endl;
+			isInFarm = true;
+
+		}
+		else {
+			isInFarm = false;
 		}
 	}
 	if (isAPressed) {
@@ -58,14 +69,24 @@ void PlayerObject::update(float elapseTime)
 
 		// X축과 Z축 범위를 체크
 		if (newPosition.z > -20.f + playerLimit && newPosition.z < 20.f - playerLimit &&
-			newPosition.x > -40.f + playerLimit && newPosition.x < 40.f - playerLimit) {
+			newPosition.x > -limitX + playerLimit && newPosition.x < limitX - playerLimit) {
 			dir += getRight(); // 범위를 초과하지 않으면 이동
 		}
 		else {
 			if (newPosition.z <= -20.f + playerLimit) dir.z = (-20.f + playerLimit) - worldTransform[3][2];
 			if (newPosition.z >= 20.f - playerLimit) dir.z = (20.f - playerLimit) - worldTransform[3][2];
-			if (newPosition.x <= -40.f + playerLimit) dir.x = (-40.f + playerLimit) - worldTransform[3][0];
-			if (newPosition.x >= 40.f - playerLimit) dir.x = (40.f - playerLimit) - worldTransform[3][0];
+			if (newPosition.x <= -limitX + playerLimit) dir.x = (-limitX + playerLimit) - worldTransform[3][0];
+			if (newPosition.x >= limitX - playerLimit) dir.x = (limitX - playerLimit) - worldTransform[3][0];
+		}
+
+		if (newPosition.z > -8.f && newPosition.z < 10.f &&
+			newPosition.x > -15.f && newPosition.x < 1.f) {
+			std::cout << "농장안에 들어옴" << std::endl;
+			isInFarm = true;
+
+		}
+		else {
+			isInFarm = false;
 		}
 	}
 
@@ -75,16 +96,25 @@ void PlayerObject::update(float elapseTime)
 
 		// X축과 Z축 범위를 체크
 		if (newPosition.z > -20.f + playerLimit && newPosition.z < 20.f - playerLimit &&
-			newPosition.x > -40.f + playerLimit && newPosition.x < 40.f - playerLimit) {
+			newPosition.x > -limitX + playerLimit && newPosition.x < limitX - playerLimit) {
 			dir -= getLook(); // 범위를 초과하지 않으면 이동
 		}
 		else {
 			if (newPosition.z <= -20.f + playerLimit) dir.z = (-20.f + playerLimit) - worldTransform[3][2];
 			if (newPosition.z >= 20.f - playerLimit) dir.z = (20.f - playerLimit) - worldTransform[3][2];
-			if (newPosition.x <= -40.f + playerLimit) dir.x = (-40.f + playerLimit) - worldTransform[3][0];
-			if (newPosition.x >= 40.f - playerLimit) dir.x = (40.f - playerLimit) - worldTransform[3][0];
+			if (newPosition.x <= -limitX + playerLimit) dir.x = (-limitX + playerLimit) - worldTransform[3][0];
+			if (newPosition.x >= limitX - playerLimit) dir.x = (limitX - playerLimit) - worldTransform[3][0];
 		}
 
+		if (newPosition.z > -8.f && newPosition.z < 10.f &&
+			newPosition.x > -15.f && newPosition.x < 1.f) {
+			std::cout << "농장안에 들어옴" << std::endl;
+			isInFarm = true;
+
+		}
+		else {
+			isInFarm = false;
+		}
 	}
 
 	if (isDPressed) {
@@ -93,17 +123,40 @@ void PlayerObject::update(float elapseTime)
 
 		// X축과 Z축 범위를 체크
 		if (newPosition.z > -20.f + playerLimit && newPosition.z < 20.f - playerLimit &&
-			newPosition.x > -40.f + playerLimit && newPosition.x < 40.f - playerLimit) {
+			newPosition.x > -limitX + playerLimit && newPosition.x < limitX - playerLimit) {
 			dir -= getRight(); // 범위를 초과하지 않으면 이동
 		}
 		else {
 			if (newPosition.z <= -20.f + playerLimit) dir.z = (-20.f + playerLimit) - worldTransform[3][2];
 			if (newPosition.z >= 20.f - playerLimit) dir.z = (20.f - playerLimit) - worldTransform[3][2];
-			if (newPosition.x <= -40.f + playerLimit) dir.x = (-40.f + playerLimit) - worldTransform[3][0];
-			if (newPosition.x >= 40.f - playerLimit) dir.x = (40.f - playerLimit) - worldTransform[3][0];
+			if (newPosition.x <= -limitX + playerLimit) dir.x = (-limitX + playerLimit) - worldTransform[3][0];
+			if (newPosition.x >= limitX - playerLimit) dir.x = (limitX - playerLimit) - worldTransform[3][0];
 		}
 
-		
+		if (newPosition.z > -8.f && newPosition.z < 10.f &&
+			newPosition.x > -15.f && newPosition.x < 1.f) {
+			std::cout << "농장안에 들어옴" << std::endl;
+			isInFarm = true;
+		}
+		else {
+			isInFarm = false;
+		}
+	}
+
+
+	// 상점에 왔는지 체크
+
+	{
+		glm::vec3 newPosition = worldTransform[3];
+
+		if (newPosition.x > 6.5f and newPosition.x <= 11.5f and
+			newPosition.z > 3.f and newPosition.z < 5.f) {
+			std::cout << "상점 앞에 옴" << std::endl;
+			isStoreShow = true;
+		}
+		else {
+			isStoreShow = false;
+		}
 	}
 
 
@@ -143,7 +196,14 @@ void PlayerObject::keyboard(unsigned char key, bool isPressed)
 
 			break;
 		case'g':
-			//std::cout <<  << std::endl;
+		{
+			float tempX = worldTransform[3][0];
+			float tempY = worldTransform[3][1];
+			float tempZ = worldTransform[3][2];
+			std::cout << "X :" << tempX <<
+				", Y :" << tempY <<
+				", Z :" << tempZ << std::endl;
+		}
 			break;
 		default:
 			break;
@@ -175,6 +235,7 @@ void PlayerObject::keyboard(unsigned char key, bool isPressed)
 
 void PlayerObject::mouse(int button, int state, int x, int y)
 {
+	
 	if (button == GLUT_LEFT_BUTTON) {
 		if (state == GLUT_DOWN) {
 			std::cout << "클릭" << std::endl;
@@ -195,18 +256,25 @@ void PlayerObject::mouseMove(int x, int y)
 	int moveXValue = x - befMousePosX;
 	int moveYValue = y - befMousePosY;
 
-	if (moveXValue > 0)// 양수라면... 반시계로 돈당..
-	{
-		std::cout << moveXValue;
-		rotateY(float(-moveXValue / 40.f));
+	int limitRange = 25;
+	if (moveXValue > limitRange) {
+		moveXValue = limitRange;
 	}
-	else if (moveXValue < 0)// 음수라면... 시계로 돈당..
-	{
-		std::cout << moveXValue;
-		rotateY(float(-moveXValue / 40.f));
+	else if (moveXValue < -limitRange) {
+		moveXValue = -limitRange;
 	}
 
+	if (moveYValue > limitRange) {
+		moveYValue = limitRange;
+	}
+	else if (moveYValue < -limitRange) {
+		moveYValue = -limitRange;
+	}
 
+	rotateY(float(moveXValue / 80.f));
+	rotateX(float(moveYValue / 160.f));
+	
+	
 	moveXValue = x;
 	moveYValue = y;
 }

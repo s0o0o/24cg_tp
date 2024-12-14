@@ -13,6 +13,7 @@ GameObject::~GameObject()
 
 void GameObject::initilize()
 {
+	
 }
 
 void GameObject::update(float elapsedTime)
@@ -35,9 +36,9 @@ void GameObject::release()
 {
 }
 
-void GameObject::setShader(GLuint shader)
+void GameObject::setShader(GLuint my_shader)
 {
-	this->shader = shader;
+	this->shader = my_shader;
 }
 
 void GameObject::setVAO(GLuint vao, GLsizei count)
@@ -77,7 +78,6 @@ glm::vec3 GameObject::getRight() const
 }
 
 
-
 void GameObject::rotateY(float degrees)
 {
 	glm::vec3 originPos = getPosition();
@@ -87,6 +87,17 @@ void GameObject::rotateY(float degrees)
 
 	setPosition(originPos);
 }
+
+void GameObject::rotateX(float degrees)
+{
+	glm::vec3 originPos = getPosition();
+	setPosition(0.f, 0.f, 0.f);
+
+	worldTransform = glm::rotate(glm::mat4(1.f), glm::radians(degrees), glm::vec3(1.f, 0.f, 0.f)) * worldTransform;
+
+	setPosition(originPos);
+}
+
 
 void GameObject::move(glm::vec3 dir, float value)
 {

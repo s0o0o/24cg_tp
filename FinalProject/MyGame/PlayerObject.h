@@ -27,6 +27,9 @@ public :
 
 	void keyboard(unsigned char key, bool isPressed);
 	void mouse(int button, int state, int x, int y);
-	void mouseMove(int x, int y);
+	void mouseMove(int x, int y); 
+
+	bool isInFarm;
+	bool isStoreShow;
 };
 

@@ -14,21 +14,45 @@ class Scene
 private:
 	GLuint shader;
 	GLuint plainShader;
+	GLuint objShader;
 
-	GLuint BackGroundShader;
+	GLuint texShader;
 
 	GLuint sphereVAO;
 	int sphereVertexCount;
 	GLuint teapotVAO;
 	int teapotVertexCount;
 
-	GLuint fenceVAO, BGTexture, BGVAO;
+	GLuint fenceVAO;
+	GLuint BGTexture, BGVAO;
+	GLuint BGTexture2;
+	GLuint GroundTexture;
 	int fenceVertexCount;
 	GameObject* townObjects[20];
+	int townObjectCount;
+
+	GLuint dogVAO;
+	int dogVertexCount;
+
+	GLuint cubeVAO;
+	int cubeVertexCount;
+	
+	GLuint house_top_VAO, house_bottom_VAO, houseTexture[2];
+	int houseTopVertexCount, houseBottomVertexCount;
+
+	GLuint sign_top_VAO, sign_bottom_VAO, signTexture[2];
+	int signTopVertexCount, signBottomVertexCount;
+
+	GLuint treeVAO, treeVAO2;
+	int treeVertexCount, treeVertexCount2;
+
+	GLint usingLight;
 
 	PlayerObject* player;
 
 	GameObject* objects[10];
+
+	float rotateTreeY[10];
 
 	int objectCount;
 
@@ -58,7 +82,7 @@ public:
 
 private:
 	static void initBuffer(GLuint* VAO, GLsizei* vertexCount, std::string objFilename);
-	static void initCubeBuffer(GLuint* VAO, GLsizei* vertexCount, std::string objFilename);
+	static void initCubeBuffer(GLuint* VAO, GLsizei* vertexCount);
 
 	static void initBufferWithUV(GLuint* VAO, GLsizei* vertexCount, std::string objFilename);
 
