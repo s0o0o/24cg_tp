@@ -13,14 +13,28 @@ private:
 	float moveSpeed;
 
 	bool isBaby;
+	bool isAdult;
+
 	float pigXDir;
 	float pigZDir;
 
-	float movePigX;
-	float movePigZ;
+	float rangeX;
+	float rangeZ;
+
+
 	float rotatePigLeftLeg;
 	float rotatePigRightLeg;
 	float rotateFacePig;
+
+
+	float rotateBabyLeftLeg;
+	float rotateBabyRightLeg;
+	float rotateFaceBaby;
+
+	bool isMaxRotateBaby;
+	bool isMaxRotatePig;
+
+	float rotateSpeed;
 
 public:
 	Pig();
@@ -31,7 +45,8 @@ public:
 	virtual void draw() const override;
 	virtual void release() override;
 
-
+	float movePigX;
+	float movePigZ;
 };
 
 

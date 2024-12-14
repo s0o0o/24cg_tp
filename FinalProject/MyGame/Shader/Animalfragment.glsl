@@ -6,7 +6,7 @@ in vec3 outNormal;
 
 out vec4 FragColor;
 
-uniform vec3 cameraPos;
+//uniform vec3 cameraPos;
 
 const float ambientLight = 0.5f;
 const vec3 lightColor = vec3(1.f, 1.f, 1.f);	// 과제에선 uniform으로 해야할 것

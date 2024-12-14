@@ -35,7 +35,7 @@ void Scene::initialize()
 	plainShader = makeShader("./Shader/plainVert.glsl", "./Shader/plainFrag.glsl");
 	texShader = makeShader("./Shader/tex_vertex.glsl", "./Shader/tex_fragement.glsl");
 
-	pigShader = makeShader("./Shader/obj_vertex.glsl", "./Shader/obj_fragment.glsl");
+	pigShader = makeShader("./Shader/Animalvertex.glsl", "./Shader/Animalfragment.glsl");
 
 	initBuffer(&sphereVAO, &sphereVertexCount, "./OBJ/fence.obj");
 
@@ -114,17 +114,14 @@ void Scene::initialize()
 	pigs[0] = new Pig; // pig는 게임객체... 업캐스팅........
 	pigs[0]->setShader(pigShader);
 	pigs[0]->setVAO(animalVAO,animalVertexCount);
-	pigs[0]->setPosition(-5.f, 0.f, 0.f);
 
 	pigs[1] = new Pig;
 	pigs[1]->setShader(pigShader);
 	pigs[1]->setVAO(animalVAO, animalVertexCount);
-	pigs[1]->setPosition(-5.f, 0.f, 0.f);
 
 	pigs[2] = new Pig;
 	pigs[2]->setShader(pigShader);
 	pigs[2]->setVAO(animalVAO, animalVertexCount);
-	pigs[2]->setPosition(-5.f, 0.f, 0.f);
 }
 
 void Scene::release()
@@ -321,13 +318,11 @@ void Scene::draw() const
 	GLint projLoc = glGetUniformLocation(pigShader, "projTransform");
 	if (projLoc < 0)
 		std::cout << "projLoc 찾지 못함\n";
-	GLint cameraPosLoc = glGetUniformLocation(pigShader, "cameraPos");
-	if (cameraPosLoc < 0)
-		std::cout << "cameraPosLoc 찾지 못함\n";
+	
 
 	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projMatrix));
-	glUniform3f(cameraPosLoc, cameraPos.x, cameraPos.y, cameraPos.z);
+//	glUniform3f(cameraPosLoc, cameraPos.x, cameraPos.y, cameraPos.z);
 
 	glUseProgram(shader);
 
@@ -338,7 +333,7 @@ void Scene::draw() const
 	projLoc = glGetUniformLocation(shader, "projTransform");
 	if (projLoc < 0)
 		std::cout << "projLoc 찾지 못함\n";
-	cameraPosLoc = glGetUniformLocation(shader, "cameraPos");
+	GLuint cameraPosLoc = glGetUniformLocation(shader, "cameraPos");
 	if (cameraPosLoc < 0)
 		std::cout << "cameraPosLoc 찾지 못함\n";
 
