@@ -63,8 +63,6 @@ void Scene::initialize()
 	// 울타리 설치
 	initBuffer(&fenceVAO, &fenceVertexCount, "./OBJ/fence.obj");
 
-	initBuffer(&dogVAO, &dogVertexCount, "./OBJ/Courage/courage.obj");
-
 	// 나무 설치
 	initBuffer(&treeVAO, &treeVertexCount, "./OBJ/tree_up.obj");
 	initBuffer(&treeVAO2, &treeVertexCount2, "./OBJ/tree_bottom.obj");
@@ -82,6 +80,12 @@ void Scene::initialize()
 
 	// 똥 설치
 	initBuffer(&ddongVAO, &ddongVertexCount, "./OBJ/ddong.obj");
+
+	// 코인
+	initBufferWithUV(&coinVAO, &coinVertexCount, "./OBJ/coin.obj");
+
+	initBufferWithUV(&foodVAO, &foodVertexCount, "./OBJ/feed.obj");
+
 
 	std::string filenames5 = { "./Img/farmsign_rest.png" };
 	initTexture(&signTexture[0], 1, &filenames5);
@@ -113,6 +117,18 @@ void Scene::initialize()
 	std::string filenames10 = { "./Img/feedButton.png" };
 	initTexture(&feedLogTexture, 1, &filenames10);
 
+	std::string filenames11 = { "./Img/coin.png" };
+	initTexture(&coinTexture, 1, &filenames11);
+
+	std::string filenames12 = { "./Img/buy.png" };
+	initTexture(&buySuccessTexture, 1, &filenames12);
+
+	std::string filenames13 = { "./Img/feedpack.png" };
+	initTexture(&feedPackTexture, 1, &filenames13);
+
+	std::string filenames14 = { "./Img/growNsell.png" };
+	initTexture(&growDoneTexture, 1, &filenames14);
+
 	light.x = 0.f;
 	light.y = 2.f;
 	light.z = -2.f;
@@ -124,18 +140,8 @@ void Scene::initialize()
 
 	player->setPosition(0.f, 0.f, 15.f);
 
-	//srand(clock());
-
-	objects[0] = new TownObject;		// 업캐스팅!! rotateObject는.. 돌고있는 객체는.. 게임의 객체이다!!
-	objects[0]->setShader(shader);
-	objects[0]->setVAO(sphereVAO, sphereVertexCount);
-	objects[0]->setPosition(0.f, 0.5f, 0.f);
-
-	objects[1] = new TownObject;		// 업캐스팅
-	objects[1]->setShader(shader);
-	objects[1]->setVAO(dogVAO, dogVertexCount);
-	objects[1]->setPosition(2.f, 0.5f, 0.f);
-
+	maxCoin = 20;
+	maxFeed = 20;
 	objectCount = 2;
 	townObjectCount = 15;
 
@@ -182,6 +188,28 @@ void Scene::initialize()
 	isTitleAniEnd = false;
 	isTitleAni = false;
 
+	for (int i = 0; i < maxCoin; ++i) {
+		coin_x[i] = -0.9f + i * 0.1f;
+		isCoin[i] = false;
+	}
+	isCoin[0] = true;
+	isCoin[1] = true;
+	isCoin[2] = true;
+	isCoin[3] = true;
+	isCoin[4] = true;
+	nowCoin = 5;
+
+	for (int i = 0; i < maxFeed; ++i) {
+		feed_x[i] = -0.9f + i * 0.1f;
+		isFood[i] = false;
+	}
+
+	isFood[0] = true;
+	isFood[1] = true;
+	isFood[2] = true;
+	isFood[3] = true;
+	isFood[4] = true;
+	nowFeed = 5;
 }
 
 void Scene::release()
@@ -367,7 +395,7 @@ void Scene::update(float elapsedTime)
 	for (int i = 0; i < alpacaCount; ++i)
 	{
 		alpacas[i]->update(elapsedTime);
-		if (alpacas[i]->feedNum >= 5) {
+		if (alpacas[i]->feedNum >= 7) {
 			if (alpacas[i]->isBaby) {
 				alpacas[i]->isBaby = false;
 			}
@@ -389,7 +417,6 @@ void Scene::update(float elapsedTime)
 			}
 		}
 	}
-
 
 	for (int i = 0; i < chickenCount; ++i)
 	{
@@ -418,12 +445,13 @@ void Scene::update(float elapsedTime)
 	}
 
 	if (isTitleAni) {
-		cameraY -= 0.01f;
+		cameraY -= 0.03f;
 		if (cameraY <= 2.f) {
 			isTitleAni = false;
 			isTitleAniEnd = true;
 		}
 	}
+
 }
 
 void Scene::draw() const
@@ -1048,126 +1076,9 @@ void Scene::draw() const
 		}
 	}
 
-	for (int i = 0; i < pigCount; ++i) {
-		pigs[i]->draw();
-		if (pigs[i]->isNear) {
-			glDisable(GL_DEPTH_TEST);
-			glUseProgram(bgShader);
-
-			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
-			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
-			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
-
-			matrix = sclaeMatrix;
-
-			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
-			if (modelLoc < 0)
-				std::cout << " modelLoc 찾을수 없음!";
-			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
-
-			glBindVertexArray(cubeVAO);
-			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
-			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
-			glEnable(GL_DEPTH_TEST);
-		}
-	}
-
-	for (int i = 0; i < alpacaCount; ++i) {
-		alpacas[i]->draw();
-		if (alpacas[i]->isNear) {
-			glDisable(GL_DEPTH_TEST);
-			glUseProgram(bgShader);
-
-			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
-			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
-			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
-
-			matrix = sclaeMatrix;
-
-			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
-			if (modelLoc < 0)
-				std::cout << " modelLoc 찾을수 없음!";
-			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
-
-			glBindVertexArray(cubeVAO);
-			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
-			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
-			glEnable(GL_DEPTH_TEST);
-		}
-	}
 
 
-	for (int i = 0; i < penguinCount; ++i) {
-		penguins[i]->draw();
-		if (penguins[i]->isNear) {
-			glDisable(GL_DEPTH_TEST);
-			glUseProgram(bgShader);
 
-			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
-			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
-			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
-
-			matrix = sclaeMatrix;
-
-			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
-			if (modelLoc < 0)
-				std::cout << " modelLoc 찾을수 없음!";
-			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
-
-			glBindVertexArray(cubeVAO);
-			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
-			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
-			glEnable(GL_DEPTH_TEST);
-		}
-	}
-
-	for (int i = 0; i < chickenCount; ++i) {
-		chics[i]->draw();
-		if (chics[i]->isNear) {
-			glDisable(GL_DEPTH_TEST);
-			glUseProgram(bgShader);
-
-			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
-			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
-			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
-
-			matrix = sclaeMatrix;
-
-			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
-			if (modelLoc < 0)
-				std::cout << " modelLoc 찾을수 없음!";
-			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
-
-			glBindVertexArray(cubeVAO);
-			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
-			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
-			glEnable(GL_DEPTH_TEST);
-		}
-	}
-
-	for (int i = 0; i < foxCount; ++i) {
-		foxes[i]->draw();
-		if (foxes[i]->isNear) {
-			glDisable(GL_DEPTH_TEST);
-			glUseProgram(bgShader);
-
-			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
-			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
-			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
-
-			matrix = sclaeMatrix;
-
-			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
-			if (modelLoc < 0)
-				std::cout << " modelLoc 찾을수 없음!";
-			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
-
-			glBindVertexArray(cubeVAO);
-			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
-			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
-			glEnable(GL_DEPTH_TEST);
-		}
-	}
 
 
 
@@ -1231,6 +1142,315 @@ void Scene::draw() const
 			}
 		}
 	}
+
+
+	// 코인..
+	for (int i = 0; i < nowCoin; ++i)
+	{
+		if (isCoin[i]) {
+			glUseProgram(bgShader);
+
+			GLuint usingLight = glGetUniformLocation(bgShader, "useLight");
+			glUniform1i(usingLight, GL_FALSE);
+
+			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(coin_x[i], 0.75f, 0.f));
+			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(0.08f / 2, 0.1f / 2, 0.1f));
+
+			matrix = translateMatrix * rotMatrixY * sclaeMatrix;
+
+			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+			if (modelLoc < 0)
+				std::cout << " modelLoc 찾을수 없음!";
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+			glBindVertexArray(coinVAO);
+			glBindTexture(GL_TEXTURE_2D, coinTexture);
+			glDrawArrays(GL_TRIANGLES, 0, coinVertexCount);
+
+			usingLight = glGetUniformLocation(bgShader, "useLight");
+			glUniform1i(usingLight, GL_TRUE);
+		}
+	}
+
+	for (int i = 0; i < nowFeed; ++i)
+	{
+		if (isFood[i]) {
+			glUseProgram(bgShader);
+
+			GLuint usingLight = glGetUniformLocation(bgShader, "useLight");
+			glUniform1i(usingLight, GL_FALSE);
+
+			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(feed_x[i], -0.85f, 0.f));
+			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(0.08f / 2, 0.12f / 2, 0.1f));
+
+			matrix = translateMatrix * rotMatrixY * sclaeMatrix;
+
+			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+			if (modelLoc < 0)
+				std::cout << " modelLoc 찾을수 없음!";
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+			glBindVertexArray(foodVAO);
+			glBindTexture(GL_TEXTURE_2D, feedPackTexture);
+			glDrawArrays(GL_TRIANGLES, 0, foodVertexCount);
+
+			usingLight = glGetUniformLocation(bgShader, "useLight");
+			glUniform1i(usingLight, GL_TRUE);
+		}
+	}
+
+
+	for (int i = 0; i < pigCount; ++i) {
+		pigs[i]->draw();
+		if (pigs[i]->isNear) {
+			if (not pigs[i]->isBaby) {
+
+				// 다 컸을 때 파는 문구
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f, 1.5f / 2, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, growDoneTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+			else if (pigs[i]->isBaby) {
+
+				// 아직 다 안커서 밥주기
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+		}
+	}
+	for (int i = 0; i < alpacaCount; ++i) {
+		alpacas[i]->draw();
+		if (alpacas[i]->isNear) {
+			if (not alpacas[i]->isBaby) {
+
+				// 다 컸을 때 파는 문구
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f, 1.5f / 2, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, growDoneTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+			else if (alpacas[i]->isBaby) {
+
+				// 아직 다 안커서 밥주기
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+		}
+	}
+
+
+	for (int i = 0; i < penguinCount; ++i) {
+		penguins[i]->draw();
+		if (penguins[i]->isNear) {
+			if (not penguins[i]->isBaby) {
+
+				// 다 컸을 때 파는 문구
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f, 1.5f / 2, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, growDoneTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+			else if (penguins[i]->isBaby) {
+
+				// 아직 다 안커서 밥주기
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+		}
+	}
+
+	for (int i = 0; i < chickenCount; ++i) {
+		chics[i]->draw();
+		if (chics[i]->isNear) {
+			if (not chics[i]->isBaby) {
+
+				// 다 컸을 때 파는 문구
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f, 1.5f / 2, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, growDoneTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+			else if (chics[i]->isBaby) {
+
+				// 아직 다 안커서 밥주기
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+		}
+	}
+
+	for (int i = 0; i < foxCount; ++i) {
+		foxes[i]->draw();
+		if (foxes[i]->isNear) {
+			if (not foxes[i]->isBaby) {
+
+				// 다 컸을 때 파는 문구
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f, 1.5f / 2, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, growDoneTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+			else if (foxes[i]->isBaby) {
+
+				// 아직 다 안커서 밥주기
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+		}
+	}
 }
 
 void Scene::keyboard(unsigned char key, bool isPressed)
@@ -1242,55 +1462,88 @@ void Scene::keyboard(unsigned char key, bool isPressed)
 
 		case '0':
 			if (player->isStoreShow) {
+				if (nowCoin > 1) {
+					pigs[pigCount] = new Pig;
+					pigs[pigCount]->setShader(animalShader);
+					pigs[pigCount]->setVAO(animalVAO, animalVertexCount);
 
-				pigs[pigCount] = new Pig;
-				pigs[pigCount]->setShader(animalShader);
-				pigs[pigCount]->setVAO(animalVAO, animalVertexCount);
-
-				++pigCount;
-				std::cout << "돼지 구매 " << std::endl;
-
+					++pigCount;
+					std::cout << "돼지 구매 " << std::endl;
+					--nowCoin;
+					isCoin[nowCoin] = false;
+					--nowCoin;
+					isCoin[nowCoin] = false;
+				}
 			}
 
 			break;
 		case '1':
 			if (player->isStoreShow) {
-				chics[chickenCount] = new Chic;
-				chics[chickenCount]->setShader(animalShader);
-				chics[chickenCount]->setVAO(animalVAO, animalVertexCount);
+				if (nowCoin > 1) {
+					chics[chickenCount] = new Chic;
+					chics[chickenCount]->setShader(animalShader);
+					chics[chickenCount]->setVAO(animalVAO, animalVertexCount);
 
-				++chickenCount;
-				std::cout << "병아리 구매 " << std::endl;
+					++chickenCount;
+					std::cout << "병아리 구매 " << std::endl;
+					--nowCoin;
+					isCoin[nowCoin] = false;
+					--nowCoin;
+					isCoin[nowCoin] = false;
+				}
 			}
 			break;
 		case '2':
 			if (player->isStoreShow) {
-				alpacas[alpacaCount] = new Alpaca;
-				alpacas[alpacaCount]->setShader(animalShader);
-				alpacas[alpacaCount]->setVAO(animalVAO, animalVertexCount);
+				if (nowCoin > 2) {
+					alpacas[alpacaCount] = new Alpaca;
+					alpacas[alpacaCount]->setShader(animalShader);
+					alpacas[alpacaCount]->setVAO(animalVAO, animalVertexCount);
 
-				++alpacaCount;
-				std::cout << "알파카 구매 " << std::endl;
+					++alpacaCount;
+					std::cout << "알파카 구매 " << std::endl;
+					--nowCoin;
+					isCoin[nowCoin] = false;
+					--nowCoin;
+					isCoin[nowCoin] = false;
+					--nowCoin;
+					isCoin[nowCoin] = false;
+				}
+
 			}
 			break;
 		case '3':
 			if (player->isStoreShow) {
-				penguins[penguinCount] = new Penguin;
-				penguins[penguinCount]->setShader(animalShader);
-				penguins[penguinCount]->setVAO(animalVAO, animalVertexCount);
+				if (nowCoin > 1) {
+					penguins[penguinCount] = new Penguin;
+					penguins[penguinCount]->setShader(animalShader);
+					penguins[penguinCount]->setVAO(animalVAO, animalVertexCount);
 
-				++penguinCount;
-				std::cout << "펭귄 구매 " << std::endl;
+					++penguinCount;
+					std::cout << "펭귄 구매 " << std::endl;
+
+					--nowCoin;
+					isCoin[nowCoin] = false;
+					--nowCoin;
+					isCoin[nowCoin] = false;
+				}
 			}
 			break;
 		case '4':
 			if (player->isStoreShow) {
-				foxes[foxCount] = new Fox;
-				foxes[foxCount]->setShader(animalShader);
-				foxes[foxCount]->setVAO(animalVAO, animalVertexCount);
+				if (nowCoin > 1) {
+					foxes[foxCount] = new Fox;
+					foxes[foxCount]->setShader(animalShader);
+					foxes[foxCount]->setVAO(animalVAO, animalVertexCount);
 
-				++foxCount;
-				std::cout << "여우 구매 " << std::endl;
+					++foxCount;
+					std::cout << "여우 구매 " << std::endl;
+
+					--nowCoin;
+					isCoin[nowCoin] = false;
+					--nowCoin;
+					isCoin[nowCoin] = false;
+				}
 			}
 			break;
 
@@ -1302,37 +1555,114 @@ void Scene::keyboard(unsigned char key, bool isPressed)
 			for (auto& ddong : ddongs) {
 				if (ddong.isNear and ddong.isDraw) {
 					ddong.isDraw = false;
+					if (nowFeed < 20) {
+						isFood[nowFeed] = true;
+						++nowFeed;
+					}
 				}
 			}
 			for (int i = 0; i < pigCount; ++i) {
 				if (pigs[i]->isNear) {
-					++pigs[i]->feedNum;
-					std::cout << "돼지 밥준 횟수 : " << pigs[i]->feedNum << std::endl;
+					if (pigs[i]->isBaby) {
+						if (nowFeed > 0) {
+							--nowFeed;
+							isFood[nowFeed] = false;
+
+							++pigs[i]->feedNum;
+							std::cout << "돼지 밥준 횟수 : " << pigs[i]->feedNum << std::endl;
+						}
+						
+					}
+					else if (not pigs[i]->isBaby) {
+						std::cout << " 돼지 팔음" << std::endl;
+						isCoin[nowCoin] = true;
+						++nowCoin;
+						delete pigs[i];
+						--pigCount;
+					}
 
 				}
 			}
 			for (int i = 0; i < alpacaCount; ++i) {
 				if (alpacas[i]->isNear) {
-					++alpacas[i]->feedNum;
-					std::cout << "알파카 밥준 횟수 : " << alpacas[i]->feedNum << std::endl;
+					if (alpacas[i]->isBaby) {
+						if (nowFeed > 0) {
+							--nowFeed;
+							isFood[nowFeed] = false;
+
+							++alpacas[i]->feedNum;
+							std::cout << "알파카 밥준 횟수 : " << alpacas[i]->feedNum << std::endl;
+						}
+					}
+					else if (not alpacas[i]->isBaby) {
+						std::cout << " 알파카 팔음" << std::endl;
+						isCoin[nowCoin] = true;
+						++nowCoin;
+						isCoin[nowCoin] = true;
+						++nowCoin;
+						delete alpacas[i];
+						--alpacaCount;
+					}
 				}
 			}
 			for (int i = 0; i < penguinCount; ++i) {
 				if (penguins[i]->isNear) {
-					++penguins[i]->feedNum;
-					std::cout << "펭귄  밥준 횟수 : " << penguins[i]->feedNum << std::endl;
+					if (penguins[i]->isBaby) {
+						if (nowFeed > 0) {
+							--nowFeed;
+							isFood[nowFeed] = false;
+
+							++penguins[i]->feedNum;
+							std::cout << "펭귄  밥준 횟수 : " << penguins[i]->feedNum << std::endl;
+						}
+					}
+					else if (penguins[i]->isBaby) {
+						std::cout << " 펭귄 팔음" << std::endl;
+						isCoin[nowCoin] = true;
+						++nowCoin;
+						delete penguins[i];
+						--penguinCount;
+					}
+
 				}
 			}
 			for (int i = 0; i < chickenCount; ++i) {
 				if (chics[i]->isNear) {
-					++chics[i]->feedNum;
-					std::cout << "치킨  밥준 횟수 : " << chics[i]->feedNum << std::endl;
+					if (chics[i]->isBaby) {
+						if (nowFeed > 0) {
+							--nowFeed;
+							isFood[nowFeed] = false;
+
+							++chics[i]->feedNum;
+							std::cout << "치킨  밥준 횟수 : " << chics[i]->feedNum << std::endl;
+						}
+					}
+					else if (not chics[i]->isBaby) {
+						std::cout << " 닭 팔음" << std::endl;
+						isCoin[nowCoin] = true;
+						++nowCoin;
+						delete chics[i];
+						--chickenCount;
+					}
 				}
 			}
 			for (int i = 0; i < foxCount; ++i) {
 				if (foxes[i]->isNear) {
-					++foxes[i]->feedNum;
-					std::cout << "여우 밥준 횟수 : " << foxes[i]->feedNum << std::endl;
+					if (foxes[i]->isBaby) {
+						if (nowFeed > 0) {
+							--nowFeed;
+							isFood[nowFeed] = false;
+							++foxes[i]->feedNum;
+							std::cout << "여우 밥준 횟수 : " << foxes[i]->feedNum << std::endl;
+						}
+					}
+					else if (not foxes[i]->isBaby) {
+						std::cout << " 여우 팔음" << std::endl;
+						isCoin[nowCoin] = true;
+						++nowCoin;
+						delete foxes[i];
+						--foxCount;
+					}
 				}
 			}
 			break;
@@ -1351,6 +1681,7 @@ void Scene::keyboard(unsigned char key, bool isPressed)
 
 void Scene::specialKeyboard(int key, bool isPressed)
 {
+
 }
 
 void Scene::mouse(int button, int state, int x, int y)

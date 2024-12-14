@@ -48,11 +48,26 @@ public:
 	GLuint treeVAO, treeVAO2;
 	int treeVertexCount, treeVertexCount2;
 
+	GLuint coinVAO, coinTexture, buySuccessTexture;
+	int coinVertexCount;
+	float coin_x[20];
+	bool isCoin[20];
+	int nowCoin;
+	int maxCoin;
 
+	GLuint foodVAO;
+	int foodVertexCount;
+	float feed_x[20];
+	bool isFood[20];
+	int nowFeed;
+	int maxFeed;
 
 	GLuint ddongVAO, ddongLogTexture, feedLogTexture;
+	GLuint feedPackTexture;
 	int ddongVertexCount;
 	int ddongTimeCount;
+
+	GLuint growDoneTexture;
 
 	GLuint storeTexture;
 
