@@ -10,7 +10,7 @@ uniform sampler2D outSampler;
 
 uniform vec3 cameraPos;
 
-const float ambientLight = 1.f;
+const float ambientLight = 0.8f;
 uniform vec3 lightColor;
 
 const vec3 lightPos = vec3(5.f, 25.f, 0.f);

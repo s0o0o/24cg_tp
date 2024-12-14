@@ -20,8 +20,6 @@
 #define STB_IMAGE_IMPLEMENTATION		// 단 하나의 .cpp 에만 define 해줘야 한다.. 중복 include 주의!
 #include <stb_image.h>
 
-
-
 struct Ddong {
 	float x, y, z;
 
@@ -29,6 +27,16 @@ struct Ddong {
 	bool isNear;
 };
 std::vector<Ddong> ddongs;
+
+struct Snow {
+	float x, y, z;
+	float size;
+	float speed;
+
+	bool isDraw;
+};
+
+std::vector<Snow> snows;
 
 Scene::Scene(int winWidth, int winHeight)
 	: width{ winWidth }, height{ winHeight }
@@ -56,7 +64,7 @@ void Scene::initialize()
 
 	animalShader = makeShader("./Shader/Animalvertex.glsl", "./Shader/Animalfragment.glsl");
 
-	initBuffer(&sphereVAO, &sphereVertexCount, "./OBJ/fence.obj");
+	initBuffer(&sphereVAO, &sphereVertexCount, "./OBJ/sphere.obj");
 
 	initCubeBuffer(&cubeVAO, &cubeVertexCount);
 
@@ -95,6 +103,9 @@ void Scene::initialize()
 	initBackGroundBuffer();
 	std::string filenames3 = { "./Img/grass.jpg" };
 	initTexture(&GroundTexture, 1, &filenames3);
+
+	std::string filenames15 = { "./Img/snowGrass.png" };
+	initTexture(&GroundTexture2, 1, &filenames15);
 
 	std::string filenames = { "./Img/sky1.png" };
 	initTexture(&BGTexture, 1, &filenames);
@@ -210,6 +221,9 @@ void Scene::initialize()
 	isFood[3] = true;
 	isFood[4] = true;
 	nowFeed = 5;
+
+	isSnow = true;
+	isDay = true;
 }
 
 void Scene::release()
@@ -380,66 +394,68 @@ void Scene::update(float elapsedTime)
 	/*for (int i = 0; i < objectCount; ++i)
 		objects[i]->update(elapsedTime);*/	// 업캐스팅 시에도 RotateObject의 update가 호출된다! -> virtual
 
-	for (int i = 0; i < pigCount; ++i) {
-		pigs[i]->update(elapsedTime);
-		if (pigs[i]->feedNum >= 5) {
-			if (pigs[i]->isBaby) {
-				pigs[i]->isBaby = false;
-			}
-			if (not pigs[i]->isBaby) {
-				//std::cout << " 이제 돼지 어른" << std::endl;
-			}
-		}
-	}
-
-	for (int i = 0; i < alpacaCount; ++i)
-	{
-		alpacas[i]->update(elapsedTime);
-		if (alpacas[i]->feedNum >= 7) {
-			if (alpacas[i]->isBaby) {
-				alpacas[i]->isBaby = false;
-			}
-			if (not alpacas[i]->isBaby) {
-				std::cout << " 이제 알파카 어른" << std::endl;
-			}
-		}
-	}
-
-	for (int i = 0; i < penguinCount; ++i)
-	{
-		penguins[i]->update(elapsedTime);
-		if (penguins[i]->feedNum >= 5) {
-			if (penguins[i]->isBaby) {
-				penguins[i]->isBaby = false;
-			}
-			if (not penguins[i]->isBaby) {
-				//std::cout << " 이제 돼지 어른" << std::endl;
-			}
-		}
-	}
-
-	for (int i = 0; i < chickenCount; ++i)
-	{
-		chics[i]->update(elapsedTime);
-		if (chics[i]->feedNum >= 5) {
-			if (chics[i]->isBaby) {
-				chics[i]->isBaby = false;
-			}
-			if (not chics[i]->isBaby) {
-				//std::cout << " 이제 돼지 어른" << std::endl;
+	if (not isAnimalSleep) {
+		for (int i = 0; i < pigCount; ++i) {
+			pigs[i]->update(elapsedTime);
+			if (pigs[i]->feedNum >= 5) {
+				if (pigs[i]->isBaby) {
+					pigs[i]->isBaby = false;
+				}
+				if (not pigs[i]->isBaby) {
+					//std::cout << " 이제 돼지 어른" << std::endl;
+				}
 			}
 		}
 
-	}
-
-	for (int i = 0; i < foxCount; ++i) {
-		foxes[i]->update(elapsedTime);
-		if (foxes[i]->feedNum >= 5) {
-			if (foxes[i]->isBaby) {
-				foxes[i]->isBaby = false;
+		for (int i = 0; i < alpacaCount; ++i)
+		{
+			alpacas[i]->update(elapsedTime);
+			if (alpacas[i]->feedNum >= 7) {
+				if (alpacas[i]->isBaby) {
+					alpacas[i]->isBaby = false;
+				}
+				if (not alpacas[i]->isBaby) {
+					std::cout << " 이제 알파카 어른" << std::endl;
+				}
 			}
-			if (not foxes[i]->isBaby) {
-				//std::cout << " 이제 돼지 어른" << std::endl;
+		}
+
+		for (int i = 0; i < penguinCount; ++i)
+		{
+			penguins[i]->update(elapsedTime);
+			if (penguins[i]->feedNum >= 5) {
+				if (penguins[i]->isBaby) {
+					penguins[i]->isBaby = false;
+				}
+				if (not penguins[i]->isBaby) {
+					//std::cout << " 이제 돼지 어른" << std::endl;
+				}
+			}
+		}
+
+		for (int i = 0; i < chickenCount; ++i)
+		{
+			chics[i]->update(elapsedTime);
+			if (chics[i]->feedNum >= 5) {
+				if (chics[i]->isBaby) {
+					chics[i]->isBaby = false;
+				}
+				if (not chics[i]->isBaby) {
+					//std::cout << " 이제 돼지 어른" << std::endl;
+				}
+			}
+
+		}
+
+		for (int i = 0; i < foxCount; ++i) {
+			foxes[i]->update(elapsedTime);
+			if (foxes[i]->feedNum >= 5) {
+				if (foxes[i]->isBaby) {
+					foxes[i]->isBaby = false;
+				}
+				if (not foxes[i]->isBaby) {
+					//std::cout << " 이제 돼지 어른" << std::endl;
+				}
 			}
 		}
 	}
@@ -452,6 +468,51 @@ void Scene::update(float elapsedTime)
 		}
 	}
 
+	snowTime++;
+	if (snowTime > 15000) {
+		isSnow = not isSnow;
+		snowTime = 0;
+		snows.clear();
+	}
+
+	if (isSnow) {
+		snowCount++;
+		if (snowCount > 40) {
+			randx = -20.f + static_cast<float>(std::rand()) / (static_cast<float>(RAND_MAX / 40.f));
+			randz = -10.f + static_cast<float>(std::rand()) / (static_cast<float>(RAND_MAX / 20.f));
+			size = 0.08f + (rand() / (float)RAND_MAX) * (0.03f - 0.01f);
+			speed = 0.005f + (rand() / (float)RAND_MAX) * (0.000075f - 0.00005f);
+
+			snows.emplace_back(Snow{ randx, 20.5f, randz, size,speed });
+			snowCount = 0;
+		}
+
+
+		for (auto& snow : snows) {
+			snow.isDraw = true;
+			snow.y -= snow.speed;
+			if (snow.y < 0.f) {
+				snow.isDraw = false;
+			}
+		}
+	}
+
+	dayTime++;
+	if (dayTime > 12000) {
+		dayTime = 0;
+		isDay = not isDay;
+	}
+
+	if (isDay) {
+		isAnimalSleep = false;
+
+		//std::cout << "낮" << std::endl;
+	}
+	else if (not isDay) {
+		isAnimalSleep = true;
+		//std::cout << "밤" << std::endl;
+
+	}
 }
 
 void Scene::draw() const
@@ -593,7 +654,8 @@ void Scene::draw() const
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
 		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projMatrix));
 
-		glBindTexture(GL_TEXTURE_2D, GroundTexture);
+		if (isSnow) glBindTexture(GL_TEXTURE_2D, GroundTexture2);
+		else glBindTexture(GL_TEXTURE_2D, GroundTexture);
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 
 	}
@@ -764,7 +826,7 @@ void Scene::draw() const
 	// 조명 일시적으로 끌거임
 
 
-	glUniform1i(usingLight, GL_TRUE);
+	//glUniform1i(usingLight, GL_TRUE);
 
 	glm::mat4 translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 11.5f));
 	glm::mat4 rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(20.f), glm::vec3(0.f, 1.f, 0.f));
@@ -777,6 +839,22 @@ void Scene::draw() const
 		std::cout << " modelLoc 찾을수 없음!";
 	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
 
+
+	if (not isDay) {
+		GLint useLightColor = glGetUniformLocation(texShader, "lightColor");
+		if (useLightColor < 0) {
+			std::cout << " lightColor 찾을 수 없음.." << std::endl;
+		}
+		glUniform3f(useLightColor, 0.f / 255.f, 40.f / 255.f, 145.f / 255.f);
+	}
+	else if (isDay) {
+		GLint useLightColor = glGetUniformLocation(texShader, "lightColor");
+		if (useLightColor < 0) {
+			std::cout << " lightColor 찾을 수 없음.." << std::endl;
+		}
+		glUniform3f(useLightColor, 255.f / 255.f, 242.f / 255.f, 230.f / 255.f);
+	}
+
 	glBindVertexArray(sign_bottom_VAO);
 	glBindTexture(GL_TEXTURE_2D, signTexture[0]);
 	glDrawArrays(GL_TRIANGLES, 0, signBottomVertexCount);
@@ -785,8 +863,6 @@ void Scene::draw() const
 	glBindTexture(GL_TEXTURE_2D, signTexture[0]);
 	glDrawArrays(GL_TRIANGLES, 0, signTopVertexCount);
 
-	GLuint usingLight = glGetUniformLocation(texShader, "useLight");
-	glUniform1i(usingLight, GL_FALSE);
 
 	translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 1.65f, 11.6f));
 	rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(20.f), glm::vec3(0.f, 1.f, 0.f));
@@ -803,7 +879,7 @@ void Scene::draw() const
 	glBindTexture(GL_TEXTURE_2D, signTexture[1]);
 	glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
 
-	usingLight = glGetUniformLocation(texShader, "useLight");
+	GLuint usingLight = glGetUniformLocation(texShader, "useLight");
 	glUniform1i(usingLight, GL_TRUE);
 
 
@@ -980,6 +1056,21 @@ void Scene::draw() const
 		if (modelLoc < 0)
 			std::cout << " modelLoc 찾을수 없음!";
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+		if (not isDay) {
+			GLint useLightColor = glGetUniformLocation(texShader, "lightColor");
+			if (useLightColor < 0) {
+				std::cout << " lightColor 찾을 수 없음.." << std::endl;
+			}
+			glUniform3f(useLightColor, 0.f / 255.f, 40.f / 255.f, 145.f / 255.f);
+		}
+		else if (isDay) {
+			GLint useLightColor = glGetUniformLocation(texShader, "lightColor");
+			if (useLightColor < 0) {
+				std::cout << " lightColor 찾을 수 없음.." << std::endl;
+			}
+			glUniform3f(useLightColor, 255.f / 255.f, 242.f / 255.f, 230.f / 255.f);
+		}
 
 
 		glBindTexture(GL_TEXTURE_2D, houseTexture[0]);
@@ -1451,6 +1542,85 @@ void Scene::draw() const
 			}
 		}
 	}
+
+	glUseProgram(objShader);
+	glBindVertexArray(sphereVAO);
+	if (isSnow)
+	{
+		for (auto& snow : snows) {
+			if (snow.isDraw) {
+				//std::cout << "눈 그려지니..?" << std::endl;
+			// 모델변환행렬
+				GLint modelLoc = glGetUniformLocation(objShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << "modelLoc 찾지 못함\n";
+				glm::mat4 transTransform2 = glm::translate(glm::mat4(1.f), glm::vec3(snow.x, snow.y, snow.z));
+				glm::mat4 scaleMat = glm::scale(glm::mat4(1.f), glm::vec3(snow.size));
+
+				glm::mat4 finalMat;
+				finalMat = transTransform2 * scaleMat;
+
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(finalMat));
+
+
+				GLint color = glGetUniformLocation(objShader, "globalColor");
+				glUniform1i(useGlobalColor, GL_TRUE);
+				if (color < 0)
+					std::cout << "globalColor 찾지 못함\n";
+				else
+					glUniform3f(color, 1.f, 1.f, 1.f);
+
+
+				glDrawArrays(GL_TRIANGLES, 0, sphereVertexCount);
+			}
+		}
+	}
+
+	if (isDay) {
+		glUseProgram(texShader);
+		GLint useLightColor = glGetUniformLocation(texShader, "lightColor");
+		if (useLightColor < 0) {
+			std::cout << " lightColor 찾을 수 없음.." << std::endl;
+		}
+		glUniform3f(useLightColor, 255.f / 255.f, 242.f / 255.f, 230.f / 255.f);
+
+		glUseProgram(objShader);
+		useLightColor = glGetUniformLocation(objShader, "lightColor");
+		if (useLightColor < 0) {
+			std::cout << " lightColor 찾을 수 없음.." << std::endl;
+		}
+		glUniform3f(useLightColor, 255.f / 255.f, 242.f / 255.f, 230.f / 255.f);
+
+		glUseProgram(animalShader);
+		useLightColor = glGetUniformLocation(animalShader, "lightColor");
+		if (useLightColor < 0) {
+			std::cout << " lightColor 찾을 수 없음.." << std::endl;
+		}
+		glUniform3f(useLightColor, 255.f / 255.f, 242.f / 255.f, 230.f / 255.f);
+	}
+	else if (not isDay) {
+		glUseProgram(texShader);
+		GLint useLightColor = glGetUniformLocation(texShader, "lightColor");
+		if (useLightColor < 0) {
+			std::cout << " lightColor 찾을 수 없음.." << std::endl;
+		}
+		glUniform3f(useLightColor, 0.f / 255.f, 40.f / 255.f, 145.f / 255.f);
+
+		glUseProgram(objShader);
+		useLightColor = glGetUniformLocation(objShader, "lightColor");
+		if (useLightColor < 0) {
+			std::cout << " lightColor 찾을 수 없음.." << std::endl;
+		}
+		glUniform3f(useLightColor, 0.f / 255.f, 40.f / 255.f, 145.f / 255.f);
+
+		glUseProgram(animalShader);
+		useLightColor = glGetUniformLocation(animalShader, "lightColor");
+		if (useLightColor < 0) {
+			std::cout << " lightColor 찾을 수 없음.." << std::endl;
+		}
+		glUniform3f(useLightColor, 0.f / 255.f, 40.f / 255.f, 145.f / 255.f);
+	}
+
 }
 
 void Scene::keyboard(unsigned char key, bool isPressed)
@@ -1571,7 +1741,7 @@ void Scene::keyboard(unsigned char key, bool isPressed)
 							++pigs[i]->feedNum;
 							std::cout << "돼지 밥준 횟수 : " << pigs[i]->feedNum << std::endl;
 						}
-						
+
 					}
 					else if (not pigs[i]->isBaby) {
 						std::cout << " 돼지 팔음" << std::endl;

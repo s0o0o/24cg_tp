@@ -29,6 +29,7 @@ public:
 	GLuint BGTexture, BGVAO;
 	GLuint BGTexture2;
 	GLuint GroundTexture;
+	GLuint GroundTexture2;
 	int fenceVertexCount;
 	GameObject* townObjects[20];
 	int townObjectCount;
@@ -103,6 +104,14 @@ public:
 	int width;
 	int height;
 
+	int snowTime;
+	bool isSnow;
+	int snowCount;
+	float randx, randy, randz, size, speed;
+
+	int dayTime;
+
+
 public:
 	// 게임 로직에서, update, draw..., 키 입력
 	Scene(int winWidth, int winHeight);
@@ -122,7 +131,8 @@ public:
 
 	void setWindowSize(int winWidth, int winHeight);
 	
-
+	bool isDay;
+	bool isAnimalSleep;
 
 private:
 	static void initBuffer(GLuint* VAO, GLsizei* vertexCount, std::string objFilename);

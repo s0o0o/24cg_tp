@@ -130,8 +130,18 @@ void startScene::draw() const
 		else
 			glUniform3f(color, 201 / 255.f, 133 / 255.f, 1 / 255.f);
 
+		glUseProgram(objShader);
+		useLightColor = glGetUniformLocation(objShader, "lightColor");
+		if (useLightColor < 0) {
+			std::cout << " lightColor 찾을 수 없음.." << std::endl;
+		}
+		glUniform3f(useLightColor, 1.f, 1.f, 1.f);
+
+
 		glBindVertexArray(titleVAO);
 		glDrawArrays(GL_TRIANGLES, 0, titleVertexCount);
+
+
 	}
 
 	glUseProgram(texShader);

@@ -465,8 +465,8 @@ void Fox::draw() const
 
 			glm::mat4 moveYMat = glm::translate(unitMat, glm::vec3(0.f, 0.5f, 0.f) * scaleFactor);   // °íÁ¤°ª..
 			glm::mat4 scaleMat = glm::scale(unitMat, glm::vec3(0.08f, 0.09f, 0.1f) * scaleFactor);
-			glm::mat4 moveleftPos = glm::translate(unitMat, glm::vec3(-0.15f, 0.82f, 0.6f) * scaleFactor);
-			glm::mat4 moveRightPos = glm::translate(unitMat, glm::vec3(0.15f, 0.82f, 0.6f) * scaleFactor);
+			glm::mat4 moveleftPos = glm::translate(unitMat, glm::vec3(-0.15f, 0.8f, 0.6f) * scaleFactor);
+			glm::mat4 moveRightPos = glm::translate(unitMat, glm::vec3(0.15f, 0.8f, 0.6f) * scaleFactor);
 
 			glm::mat4 finalMat;
 
