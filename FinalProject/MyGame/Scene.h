@@ -76,6 +76,10 @@ public:
 
 	float rotateTreeY[10];
 
+	bool isTitleAni;
+	bool isTitleAniEnd;
+	float cameraY;
+
 	glm::vec3 light;
 	bool isLightMove;
 

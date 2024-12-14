@@ -51,7 +51,8 @@ public:
 	void setWindowSize(int winWidth, int winHeight);
 
 	bool isShow;
-
+	bool isTitleAni;
+	bool isTitleAniEnd;
 private:
 	static void initBuffer(GLuint* VAO, GLsizei* vertexCount, std::string objFilename);
 

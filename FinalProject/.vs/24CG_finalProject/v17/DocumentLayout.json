@@ -3,28 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Fox.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Fox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\townObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\townObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\townObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\townObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\RotateObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\RotateObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\PlayerObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\PlayerObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Alpaca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Alpaca.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Chic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Fox.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Pig.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Pig.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Chic.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Chic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Penguin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -35,48 +55,56 @@
       "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Penguin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Fox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Pig.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Chic.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainVert.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Shader\\plainVert.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainFrag.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Shader\\plainFrag.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\startScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\startScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\PlayerObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\PlayerObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\library.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\library.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\RotateObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\RotateObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Alpaca.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\PlayerObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\PlayerObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Alpaca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\bg_fragment.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -118,24 +146,8 @@
       "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Shader\\Animalvertex.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\RotateObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\RotateObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\startScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\vertex.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Shader\\vertex.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\townObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\townObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\townObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\townObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\obj_vertex.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -144,18 +156,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\AnimalScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\AnimalScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\library.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\library.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainFrag.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Shader\\plainFrag.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainVert.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{6E84828E-1168-4F34-965D-0D60FF2E2841}|MyGame\\MyGame.vcxproj|solutionrelative:MyGame\\Shader\\plainVert.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\stbimgh\\stb_image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -173,401 +173,38 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "startScene.cpp",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.cpp",
-              "RelativeDocumentMoniker": "MyGame\\startScene.cpp",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.cpp",
-              "RelativeToolTip": "MyGame\\startScene.cpp",
-              "ViewState": "AQIAADMAAAAAAAAAAAAtwE8AAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-12T19:43:54.462Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Chic.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.h",
-              "RelativeDocumentMoniker": "MyGame\\Chic.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.h",
-              "RelativeToolTip": "MyGame\\Chic.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-14T18:06:08.222Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Penguin.cpp",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.cpp",
-              "RelativeDocumentMoniker": "MyGame\\Penguin.cpp",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.cpp",
-              "RelativeToolTip": "MyGame\\Penguin.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-14T15:37:27.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Penguin.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.h",
-              "RelativeDocumentMoniker": "MyGame\\Penguin.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.h",
-              "RelativeToolTip": "MyGame\\Penguin.h",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-14T15:36:05.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Fox.cpp",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.cpp",
-              "RelativeDocumentMoniker": "MyGame\\Fox.cpp",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.cpp",
-              "RelativeToolTip": "MyGame\\Fox.cpp",
-              "ViewState": "AQIAAIQAAAAAAAAAAAAAAJAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-14T18:06:11.321Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "Scene.cpp",
               "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Scene.cpp",
               "RelativeDocumentMoniker": "MyGame\\Scene.cpp",
               "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Scene.cpp",
               "RelativeToolTip": "MyGame\\Scene.cpp",
-              "ViewState": "AQIAAF0BAAAAAAAAAAAkwHIBAAAgAAAA",
+              "ViewState": "AQIAAOgDAAAAAAAAAAAkwPwDAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-12T15:39:12.483Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Pig.cpp",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.cpp",
-              "RelativeDocumentMoniker": "MyGame\\Pig.cpp",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.cpp",
-              "RelativeToolTip": "MyGame\\Pig.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-14T08:16:50.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Fox.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.h",
-              "RelativeDocumentMoniker": "MyGame\\Fox.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.h",
-              "RelativeToolTip": "MyGame\\Fox.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-14T18:06:21.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Chic.cpp",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.cpp",
-              "RelativeDocumentMoniker": "MyGame\\Chic.cpp",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.cpp",
-              "RelativeToolTip": "MyGame\\Chic.cpp",
-              "ViewState": "AQIAABQBAAAAAAAAAAAowDQBAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-14T18:06:07.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Pig.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.h",
-              "RelativeDocumentMoniker": "MyGame\\Pig.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.h",
-              "RelativeToolTip": "MyGame\\Pig.h",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACsAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-14T08:16:44.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Scene.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Scene.h",
-              "RelativeDocumentMoniker": "MyGame\\Scene.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Scene.h",
-              "RelativeToolTip": "MyGame\\Scene.h",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAEkAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-12T16:08:10.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GameObject.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.h",
-              "RelativeDocumentMoniker": "MyGame\\GameObject.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.h",
-              "RelativeToolTip": "MyGame\\GameObject.h",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAC4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-12T15:39:57.685Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GameObject.cpp",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.cpp",
-              "RelativeDocumentMoniker": "MyGame\\GameObject.cpp",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.cpp",
-              "RelativeToolTip": "MyGame\\GameObject.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-12T15:39:55.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 4,
               "Title": "PlayerObject.cpp",
               "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\PlayerObject.cpp",
               "RelativeDocumentMoniker": "MyGame\\PlayerObject.cpp",
               "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\PlayerObject.cpp",
               "RelativeToolTip": "MyGame\\PlayerObject.cpp",
-              "ViewState": "AQIAAAUBAAAAAAAAAAAAABsBAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsBAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-12T17:06:58.457Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "RotateObject.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\RotateObject.h",
-              "RelativeDocumentMoniker": "MyGame\\RotateObject.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\RotateObject.h",
-              "RelativeToolTip": "MyGame\\RotateObject.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-12T16:15:53.178Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Alpaca.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.h",
-              "RelativeDocumentMoniker": "MyGame\\Alpaca.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.h",
-              "RelativeToolTip": "MyGame\\Alpaca.h",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-14T15:05:23.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PlayerObject.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\PlayerObject.h",
-              "RelativeDocumentMoniker": "MyGame\\PlayerObject.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\PlayerObject.h",
-              "RelativeToolTip": "MyGame\\PlayerObject.h",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAwwCcAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-12T17:06:42.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Alpaca.cpp",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.cpp",
-              "RelativeDocumentMoniker": "MyGame\\Alpaca.cpp",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.cpp",
-              "RelativeToolTip": "MyGame\\Alpaca.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-14T15:07:35.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\main.cpp",
-              "RelativeDocumentMoniker": "MyGame\\main.cpp",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\main.cpp",
-              "RelativeToolTip": "MyGame\\main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-12T16:14:18.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "bg_vertex.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\bg_vertex.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\bg_vertex.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\bg_vertex.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\bg_vertex.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-14T05:11:11.287Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "bg_fragment.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\bg_fragment.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\bg_fragment.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\bg_fragment.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\bg_fragment.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-14T05:11:19.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "fragment.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\fragment.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\fragment.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\fragment.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\fragment.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-13T04:26:14.426Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "tex_fragement.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\tex_fragement.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\tex_fragement.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\tex_fragement.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\tex_fragement.glsl",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAkwAwAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-13T12:25:26.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "tex_vertex.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\tex_vertex.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\tex_vertex.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\tex_vertex.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\tex_vertex.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-13T06:03:08.585Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "log_vertex.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\log_vertex.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\log_vertex.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\log_vertex.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\log_vertex.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-14T17:21:11.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "obj_fragment.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\obj_fragment.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\obj_fragment.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\obj_fragment.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\obj_fragment.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-13T08:42:30.293Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "delete_scalar.cpp",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
-              "ViewState": "AQIAABQAAAAAAAAAAAAnwCEAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-14T17:11:55.229Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Animalfragment.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\Animalfragment.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\Animalfragment.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\Animalfragment.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\Animalfragment.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-14T13:07:45.286Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Animalvertex.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\Animalvertex.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\Animalvertex.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\Animalvertex.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\Animalvertex.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-14T13:07:45.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "startScene.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.h",
-              "RelativeDocumentMoniker": "MyGame\\startScene.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.h",
-              "RelativeToolTip": "MyGame\\startScene.h",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAABUAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-12T19:43:35.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 3,
               "Title": "RotateObject.cpp",
               "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\RotateObject.cpp",
               "RelativeDocumentMoniker": "MyGame\\RotateObject.cpp",
@@ -580,7 +217,423 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TownObject.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\TownObject.h",
+              "RelativeDocumentMoniker": "MyGame\\TownObject.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\TownObject.h",
+              "RelativeToolTip": "MyGame\\TownObject.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-13T04:22:19.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TownObject.cpp",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\TownObject.cpp",
+              "RelativeDocumentMoniker": "MyGame\\TownObject.cpp",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\TownObject.cpp",
+              "RelativeToolTip": "MyGame\\TownObject.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-13T04:22:25.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameObject.cpp",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.cpp",
+              "RelativeDocumentMoniker": "MyGame\\GameObject.cpp",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.cpp",
+              "RelativeToolTip": "MyGame\\GameObject.cpp",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB8AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-12T15:39:55.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Alpaca.cpp",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.cpp",
+              "RelativeDocumentMoniker": "MyGame\\Alpaca.cpp",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.cpp",
+              "RelativeToolTip": "MyGame\\Alpaca.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-14T15:07:35.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Alpaca.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.h",
+              "RelativeDocumentMoniker": "MyGame\\Alpaca.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Alpaca.h",
+              "RelativeToolTip": "MyGame\\Alpaca.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-14T15:05:23.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Chic.cpp",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.cpp",
+              "RelativeDocumentMoniker": "MyGame\\Chic.cpp",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.cpp",
+              "RelativeToolTip": "MyGame\\Chic.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-14T18:06:07.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Fox.cpp",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.cpp",
+              "RelativeDocumentMoniker": "MyGame\\Fox.cpp",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.cpp",
+              "RelativeToolTip": "MyGame\\Fox.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHYBAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-14T18:06:11.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Pig.cpp",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.cpp",
+              "RelativeDocumentMoniker": "MyGame\\Pig.cpp",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.cpp",
+              "RelativeToolTip": "MyGame\\Pig.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcBAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-14T08:16:50.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Penguin.cpp",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.cpp",
+              "RelativeDocumentMoniker": "MyGame\\Penguin.cpp",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.cpp",
+              "RelativeToolTip": "MyGame\\Penguin.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-14T15:37:27.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\main.cpp",
+              "RelativeDocumentMoniker": "MyGame\\main.cpp",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\main.cpp",
+              "RelativeToolTip": "MyGame\\main.cpp",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-12T16:14:18.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Penguin.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.h",
+              "RelativeDocumentMoniker": "MyGame\\Penguin.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Penguin.h",
+              "RelativeToolTip": "MyGame\\Penguin.h",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-14T15:36:05.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Pig.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.h",
+              "RelativeDocumentMoniker": "MyGame\\Pig.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Pig.h",
+              "RelativeToolTip": "MyGame\\Pig.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-14T08:16:44.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Fox.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.h",
+              "RelativeDocumentMoniker": "MyGame\\Fox.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Fox.h",
+              "RelativeToolTip": "MyGame\\Fox.h",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACAAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-14T18:06:21.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Chic.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.h",
+              "RelativeDocumentMoniker": "MyGame\\Chic.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Chic.h",
+              "RelativeToolTip": "MyGame\\Chic.h",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-14T18:06:08.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "plainFrag.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainFrag.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\plainFrag.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainFrag.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\plainFrag.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-12T16:53:20.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "plainVert.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainVert.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\plainVert.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainVert.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\plainVert.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-12T16:53:21.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "startScene.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.h",
+              "RelativeDocumentMoniker": "MyGame\\startScene.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.h",
+              "RelativeToolTip": "MyGame\\startScene.h",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADYAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-12T19:43:35.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "library.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\library.h",
+              "RelativeDocumentMoniker": "MyGame\\library.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\library.h",
+              "RelativeToolTip": "MyGame\\library.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-12T19:42:57.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Scene.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Scene.h",
+              "RelativeDocumentMoniker": "MyGame\\Scene.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Scene.h",
+              "RelativeToolTip": "MyGame\\Scene.h",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAE4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-12T16:08:10.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "startScene.cpp",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.cpp",
+              "RelativeDocumentMoniker": "MyGame\\startScene.cpp",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\startScene.cpp",
+              "RelativeToolTip": "MyGame\\startScene.cpp",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAAAEsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-12T19:43:54.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "GameObject.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.h",
+              "RelativeDocumentMoniker": "MyGame\\GameObject.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\GameObject.h",
+              "RelativeToolTip": "MyGame\\GameObject.h",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-12T15:39:57.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RotateObject.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\RotateObject.h",
+              "RelativeDocumentMoniker": "MyGame\\RotateObject.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\RotateObject.h",
+              "RelativeToolTip": "MyGame\\RotateObject.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-12T16:15:53.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PlayerObject.h",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\PlayerObject.h",
+              "RelativeDocumentMoniker": "MyGame\\PlayerObject.h",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\PlayerObject.h",
+              "RelativeToolTip": "MyGame\\PlayerObject.h",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAwwCcAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-12T17:06:42.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "bg_vertex.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\bg_vertex.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\bg_vertex.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\bg_vertex.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\bg_vertex.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-14T05:11:11.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "bg_fragment.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\bg_fragment.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\bg_fragment.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\bg_fragment.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\bg_fragment.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-14T05:11:19.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "fragment.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\fragment.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\fragment.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\fragment.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\fragment.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-13T04:26:14.426Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 31,
+              "Title": "tex_fragement.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\tex_fragement.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\tex_fragement.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\tex_fragement.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\tex_fragement.glsl",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAkwAwAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-13T12:25:26.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "tex_vertex.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\tex_vertex.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\tex_vertex.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\tex_vertex.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\tex_vertex.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-13T06:03:08.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "log_vertex.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\log_vertex.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\log_vertex.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\log_vertex.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\log_vertex.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-14T17:21:11.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "obj_fragment.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\obj_fragment.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\obj_fragment.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\obj_fragment.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\obj_fragment.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-13T08:42:30.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "delete_scalar.cpp",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
+              "ViewState": "AQIAABQAAAAAAAAAAAAnwCEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-14T17:11:55.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Animalfragment.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\Animalfragment.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\Animalfragment.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\Animalfragment.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\Animalfragment.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-14T13:07:45.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Animalvertex.glsl",
+              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\Animalvertex.glsl",
+              "RelativeDocumentMoniker": "MyGame\\Shader\\Animalvertex.glsl",
+              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\Animalvertex.glsl",
+              "RelativeToolTip": "MyGame\\Shader\\Animalvertex.glsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-14T13:07:45.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
               "Title": "vertex.glsl",
               "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\vertex.glsl",
               "RelativeDocumentMoniker": "MyGame\\Shader\\vertex.glsl",
@@ -592,31 +645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "TownObject.cpp",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\TownObject.cpp",
-              "RelativeDocumentMoniker": "MyGame\\TownObject.cpp",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\TownObject.cpp",
-              "RelativeToolTip": "MyGame\\TownObject.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T04:22:25.243Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "TownObject.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\TownObject.h",
-              "RelativeDocumentMoniker": "MyGame\\TownObject.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\TownObject.h",
-              "RelativeToolTip": "MyGame\\TownObject.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T04:22:19.577Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "obj_vertex.glsl",
               "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\obj_vertex.glsl",
               "RelativeDocumentMoniker": "MyGame\\Shader\\obj_vertex.glsl",
@@ -628,7 +657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "AnimalScene.h",
               "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\AnimalScene.h",
               "RelativeDocumentMoniker": "MyGame\\AnimalScene.h",
@@ -636,8 +665,7 @@
               "RelativeToolTip": "MyGame\\AnimalScene.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-14T12:40:00.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T12:40:00.654Z"
             },
             {
               "$type": "Document",
@@ -653,18 +681,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "library.h",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\library.h",
-              "RelativeDocumentMoniker": "MyGame\\library.h",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\library.h",
-              "RelativeToolTip": "MyGame\\library.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-12T19:42:57.089Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 39,
               "Title": "stb_image.h",
               "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\stbimgh\\stb_image.h",
@@ -674,30 +690,6 @@
               "ViewState": "AQIAAG4bAAAAAAAAAAAhwIcbAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-14T06:16:10.741Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "plainFrag.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainFrag.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\plainFrag.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainFrag.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\plainFrag.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-12T16:53:20.7Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "plainVert.glsl",
-              "DocumentMoniker": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainVert.glsl",
-              "RelativeDocumentMoniker": "MyGame\\Shader\\plainVert.glsl",
-              "ToolTip": "C:\\Users\\yeons\\Desktop\\24-2\\24-2-\uCEF4\uADF8\\\uCD5C\uC885\uD504\uB85C\uC81D\uD2B8\\FinalProject\\MyGame\\Shader\\plainVert.glsl",
-              "RelativeToolTip": "MyGame\\Shader\\plainVert.glsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-12T16:53:21.68Z"
             }
           ]
         }

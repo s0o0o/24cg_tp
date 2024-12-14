@@ -12,8 +12,7 @@ private:
 	float rangeLimit;
 	float moveSpeed;
 
-	/*bool isBaby;
-	bool isAdult;*/
+	
 
 	float foxXDir;
 	float foxZDir;

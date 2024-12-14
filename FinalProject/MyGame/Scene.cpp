@@ -20,6 +20,8 @@
 #define STB_IMAGE_IMPLEMENTATION		// 단 하나의 .cpp 에만 define 해줘야 한다.. 중복 include 주의!
 #include <stb_image.h>
 
+
+
 struct Ddong {
 	float x, y, z;
 
@@ -168,6 +170,18 @@ void Scene::initialize()
 	foxes[0]->setVAO(animalVAO, animalVertexCount);
 
 	foxCount = 1;
+
+	penguins[0] = new Penguin; // penguin는 게임객체... 업캐스팅........
+	penguins[0]->setShader(animalShader);
+	penguins[0]->setVAO(animalVAO, animalVertexCount);
+
+	penguinCount = 1;
+
+
+	cameraY = 25.5f;
+	isTitleAniEnd = false;
+	isTitleAni = false;
+
 }
 
 void Scene::release()
@@ -358,7 +372,7 @@ void Scene::update(float elapsedTime)
 				alpacas[i]->isBaby = false;
 			}
 			if (not alpacas[i]->isBaby) {
-				//std::cout << " 이제 돼지 어른" << std::endl;
+				std::cout << " 이제 알파카 어른" << std::endl;
 			}
 		}
 	}
@@ -375,7 +389,7 @@ void Scene::update(float elapsedTime)
 			}
 		}
 	}
-	
+
 
 	for (int i = 0; i < chickenCount; ++i)
 	{
@@ -402,15 +416,32 @@ void Scene::update(float elapsedTime)
 			}
 		}
 	}
+
+	if (isTitleAni) {
+		cameraY -= 0.01f;
+		if (cameraY <= 2.f) {
+			isTitleAni = false;
+			isTitleAniEnd = true;
+		}
+	}
 }
 
 void Scene::draw() const
 {
-	glm::vec3 cameraPos = player->getPosition();		// 플레이어 위치에서
-	cameraPos.y = 1.5f;
-	glm::vec3 targetPos = cameraPos + player->getLook(); // 플레이어 앞을 바라본다
+	glm::mat4 viewMatrix = glm::lookAt(glm::vec3(0.f, cameraY, 15.f), glm::vec3(0.f, 0.5f, 0.f), glm::vec3(0.f, 1.f, 0.f));
+	glm::vec3 cameraPos = glm::vec3(1.f);
+	if (isTitleAniEnd) {
+		cameraPos = player->getPosition();		// 플레이어 위치에서
+		cameraPos.y = 1.5f;
+		glm::vec3 targetPos = cameraPos + player->getLook(); // 플레이어 앞을 바라본다
 
-	glm::mat4 viewMatrix = glm::lookAt(cameraPos, targetPos, glm::vec3(0.f, 1.f, 0.f));
+		viewMatrix = glm::lookAt(cameraPos, targetPos, glm::vec3(0.f, 1.f, 0.f));
+	}
+	else if (not isTitleAniEnd) {
+
+		viewMatrix = glm::lookAt(glm::vec3(0.f, cameraY, 25.f), glm::vec3(0.f, 2.5f, 10.f), glm::vec3(0.f, 1.f, 0.f));
+	}
+
 	glm::mat4 projMatrix = glm::perspective(glm::radians(45.f), float(width) / float(height), 0.1f, 100.f);
 
 
@@ -999,7 +1030,7 @@ void Scene::draw() const
 
 			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(10.f, 1.5f, 1.8f));
 			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
-			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(2.5f, 2.5f / 2.f, 0.001f));
+			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(3.f, 3.f / 2.f, 0.001f));
 
 			matrix = translateMatrix * rotMatrixY * sclaeMatrix;
 
@@ -1211,27 +1242,63 @@ void Scene::keyboard(unsigned char key, bool isPressed)
 
 		case '0':
 			if (player->isStoreShow) {
+
+				pigs[pigCount] = new Pig;
+				pigs[pigCount]->setShader(animalShader);
+				pigs[pigCount]->setVAO(animalVAO, animalVertexCount);
+
+				++pigCount;
 				std::cout << "돼지 구매 " << std::endl;
+
 			}
 
 			break;
 		case '1':
 			if (player->isStoreShow) {
-				std::cout << "돼지 구매 " << std::endl;
+				chics[chickenCount] = new Chic;
+				chics[chickenCount]->setShader(animalShader);
+				chics[chickenCount]->setVAO(animalVAO, animalVertexCount);
+
+				++chickenCount;
+				std::cout << "병아리 구매 " << std::endl;
 			}
 			break;
 		case '2':
 			if (player->isStoreShow) {
-				std::cout << "돼지 구매 " << std::endl;
+				alpacas[alpacaCount] = new Alpaca;
+				alpacas[alpacaCount]->setShader(animalShader);
+				alpacas[alpacaCount]->setVAO(animalVAO, animalVertexCount);
+
+				++alpacaCount;
+				std::cout << "알파카 구매 " << std::endl;
 			}
 			break;
 		case '3':
 			if (player->isStoreShow) {
-				std::cout << "돼지 구매 " << std::endl;
+				penguins[penguinCount] = new Penguin;
+				penguins[penguinCount]->setShader(animalShader);
+				penguins[penguinCount]->setVAO(animalVAO, animalVertexCount);
+
+				++penguinCount;
+				std::cout << "펭귄 구매 " << std::endl;
+			}
+			break;
+		case '4':
+			if (player->isStoreShow) {
+				foxes[foxCount] = new Fox;
+				foxes[foxCount]->setShader(animalShader);
+				foxes[foxCount]->setVAO(animalVAO, animalVertexCount);
+
+				++foxCount;
+				std::cout << "여우 구매 " << std::endl;
 			}
 			break;
 
 		case 32:
+			if (not isTitleAniEnd) {
+				isTitleAni = true;
+			}
+
 			for (auto& ddong : ddongs) {
 				if (ddong.isNear and ddong.isDraw) {
 					ddong.isDraw = false;
