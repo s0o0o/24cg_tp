@@ -1,5 +1,4 @@
 #include "startScene.h"
-#include "startScene.h"
 
 #include <iostream>
 #include <fstream>

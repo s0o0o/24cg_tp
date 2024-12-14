@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameObject.h"
+#include "Pig.h"
 
 class PlayerObject : public GameObject{
 
@@ -9,6 +10,7 @@ class PlayerObject : public GameObject{
 	bool isSPressed;
 	bool isDPressed;
 
+	
 
 	float moveSpeed;
 
@@ -24,6 +26,8 @@ public :
 	virtual void draw() const override;
 	virtual void release() override;
 
+	float playerX, playerZ;
+	
 
 	void keyboard(unsigned char key, bool isPressed);
 	void mouse(int button, int state, int x, int y);
@@ -31,5 +35,8 @@ public :
 
 	bool isInFarm;
 	bool isStoreShow;
+
+	
+
 };
 

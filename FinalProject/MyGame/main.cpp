@@ -3,6 +3,7 @@
 
 #include "Scene.h"
 #include "startScene.h"
+#include "PlayerObject.h"
 
 // 각종 콜백 함수 미리 선언
 void DisplayFunc(void);
@@ -24,6 +25,8 @@ const std::string windowTitle = "MyGame";
 // Scene 클래스... 나중에는 게임에 카메라...플레이어... -> GameFramework
 Scene g_scene{ winWidth, winHeight };		// initialize_list --> 추후 들어볼 일 있을것...
 startScene s_scene{ winWidth, winHeight };
+
+
 
 int main(int argc, char** argv)
 {
@@ -49,6 +52,10 @@ int main(int argc, char** argv)
 	// 초기 설정들
 	s_scene.initialize();
 	g_scene.initialize();
+	//store_scene.initialize();
+	
+
+	
 
 	glEnable(GL_CULL_FACE);			// 컬링(뒷면 제거) 활성화
 	//glCullFace(GL_FRONT);			// 앞면 지울건지 뒷면 지울건지
@@ -84,6 +91,7 @@ void DisplayFunc(void)
 	
 	if(s_scene.isShow)
 		g_scene.draw();
+	
 	else {
 		s_scene.draw(); // 초기화면... 그릴거임..!
 	}
@@ -96,7 +104,7 @@ void ReshapeFunc(int width, int height)
 {
 	s_scene.setWindowSize(width, height);
 	g_scene.setWindowSize(width, height);
-
+	
 	glutPostRedisplay();
 
 	glViewport(0, 0, width, height);
@@ -108,6 +116,7 @@ void KeyboardFunc(unsigned char key, int x, int y)
 		glutLeaveMainLoop();
 	s_scene.keyboard(key, true);
 	g_scene.keyboard(key, true);
+	
 }
 
 void KeyboardUpFunc(unsigned char key, int, int)
@@ -132,12 +141,14 @@ void MouseFunc(int button, int state, int x, int y)
 {
 	s_scene.mouse(button, state, x, y);
 	g_scene.mouse(button, state, x, y);
+	
 }
 
 void MotionFunc(int x, int y)
 {
 	s_scene.mouseMove(x, y);
 	g_scene.mouseMove(x, y);
+	
 }
 
 //void TimerFunc(int id)

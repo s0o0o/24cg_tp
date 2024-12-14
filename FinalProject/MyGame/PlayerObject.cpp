@@ -1,7 +1,11 @@
 #include "PlayerObject.h"
+#include "Pig.h"
 #include <iostream>
 
+
 // ÇÃ·¹ÀÌ¾î´Â ±×¸®Áö ¾ÊÀ»°ÅÀÓ.. ¹Ù¶óº¸´Â ½ÃÁ¡ÀÌ¶ó
+
+constexpr int winWidth = 1600, winHeight = 900;
 
 
 PlayerObject::PlayerObject()
@@ -15,7 +19,8 @@ PlayerObject::PlayerObject()
 
 	initilize();
 
-
+	playerX = worldTransform[3][0];
+	playerZ = worldTransform[3][2];
 }
 
 PlayerObject::~PlayerObject()
@@ -26,7 +31,6 @@ void PlayerObject::initilize()
 {
 	setVAO(0, 0);
 	setShader(0);
-
 }
 
 float playerLimit = 2.f;
@@ -55,7 +59,7 @@ void PlayerObject::update(float elapseTime)
 
 		if (newPosition.z > -8.f && newPosition.z < 10.f &&
 			newPosition.x > -15.f && newPosition.x < 1.f) {
-			std::cout << "³óÀå¾È¿¡ µé¾î¿È" << std::endl;
+			//std::cout << "³óÀå¾È¿¡ µé¾î¿È" << std::endl;
 			isInFarm = true;
 
 		}
@@ -81,7 +85,7 @@ void PlayerObject::update(float elapseTime)
 
 		if (newPosition.z > -8.f && newPosition.z < 10.f &&
 			newPosition.x > -15.f && newPosition.x < 1.f) {
-			std::cout << "³óÀå¾È¿¡ µé¾î¿È" << std::endl;
+			//std::cout << "³óÀå¾È¿¡ µé¾î¿È" << std::endl;
 			isInFarm = true;
 
 		}
@@ -108,7 +112,7 @@ void PlayerObject::update(float elapseTime)
 
 		if (newPosition.z > -8.f && newPosition.z < 10.f &&
 			newPosition.x > -15.f && newPosition.x < 1.f) {
-			std::cout << "³óÀå¾È¿¡ µé¾î¿È" << std::endl;
+			//std::cout << "³óÀå¾È¿¡ µé¾î¿È" << std::endl;
 			isInFarm = true;
 
 		}
@@ -135,7 +139,7 @@ void PlayerObject::update(float elapseTime)
 
 		if (newPosition.z > -8.f && newPosition.z < 10.f &&
 			newPosition.x > -15.f && newPosition.x < 1.f) {
-			std::cout << "³óÀå¾È¿¡ µé¾î¿È" << std::endl;
+			//std::cout << "³óÀå¾È¿¡ µé¾î¿È" << std::endl;
 			isInFarm = true;
 		}
 		else {
@@ -149,9 +153,9 @@ void PlayerObject::update(float elapseTime)
 	{
 		glm::vec3 newPosition = worldTransform[3];
 
-		if (newPosition.x > 6.5f and newPosition.x <= 11.5f and
+		if (newPosition.x > 6.f and newPosition.x <= 12.f and
 			newPosition.z > 3.f and newPosition.z < 5.f) {
-			std::cout << "»óÁ¡ ¾Õ¿¡ ¿È" << std::endl;
+			//std::cout << "»óÁ¡ ¾Õ¿¡ ¿È" << std::endl;
 			isStoreShow = true;
 		}
 		else {
@@ -159,6 +163,11 @@ void PlayerObject::update(float elapseTime)
 		}
 	}
 
+	playerX = worldTransform[3][0];
+	playerZ = worldTransform[3][2];
+
+	//std::cout << "playerX :" << playerX << ", worldTransform[3][0] : " << worldTransform[3][0] << std::endl;
+	//std::cout << "playerZ :" << playerZ << ", worldTransform[3][2] : " << worldTransform[3][2] << std::endl;
 
 	if (glm::length(dir) >= glm::epsilon<float>())
 		move(dir, moveSpeed * elapseTime);
@@ -171,6 +180,7 @@ void PlayerObject::draw() const
 void PlayerObject::release()
 {
 }
+
 
 void PlayerObject::keyboard(unsigned char key, bool isPressed)
 {
@@ -271,8 +281,8 @@ void PlayerObject::mouseMove(int x, int y)
 		moveYValue = -limitRange;
 	}
 
-	rotateY(float(moveXValue / 80.f));
-	rotateX(float(moveYValue / 160.f));
+	rotateY(float(-moveXValue / 80.f));
+	rotateX(float(-moveYValue / 160.f));
 	
 	
 	moveXValue = x;

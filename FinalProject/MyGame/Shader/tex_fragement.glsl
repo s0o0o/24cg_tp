@@ -25,17 +25,17 @@ void main()
 	float diffuseLight = max(dot(vNormal, lightDir), 0.0);	// 0 ~ 1사이의 값
 	vec3 diffuse = diffuseLight * lightColor;
 	
-	int shininess = 64;
-	vec3 cameraDir = normalize(cameraPos - outFragPos);
-	vec3 reflectDir = reflect(-lightDir, vNormal);
-	float specularLight = max(dot(cameraDir, reflectDir), 0.0);	// 0 ~ 1사이의 값
-	specularLight = pow(specularLight, shininess);
-	vec3 specular = specularLight * lightColor;
-
+//	int shininess = 64;
+//	vec3 cameraDir = normalize(cameraPos - outFragPos);
+//	vec3 reflectDir = reflect(-lightDir, vNormal);
+//	float specularLight = max(dot(cameraDir, reflectDir), 0.0);	// 0 ~ 1사이의 값
+//	specularLight = pow(specularLight, shininess);
+//	vec3 specular = specularLight * lightColor;
+//
 	// x == r == s, y == g == t,
 	vec4 outColor = texture(outSampler, outTexcoord.st);
 
-	vec3 result = (ambient + diffuse + specular) * outColor.rgb;		// vec3 * vec3 = 원소끼리의 곱
+	vec3 result = (ambient + diffuse ) * outColor.rgb;		// vec3 * vec3 = 원소끼리의 곱
 	
 	FragColor = vec4(result, 1.0);
 }

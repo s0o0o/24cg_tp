@@ -9,6 +9,7 @@
 #include "RotateObject.h"
 #include "PlayerObject.h"
 #include "TownObject.h"
+#include "Pig.h"
 
 #define STB_IMAGE_IMPLEMENTATION		// 단 하나의 .cpp 에만 define 해줘야 한다.. 중복 include 주의!
 #include <stb_image.h>
@@ -29,9 +30,12 @@ void Scene::initialize()
 	shader = makeShader("./Shader/vertex.glsl", "./Shader/fragment.glsl");
 
 	objShader = makeShader("./Shader/obj_vertex.glsl", "./Shader/obj_fragment.glsl");
+	bgShader = makeShader("./Shader/bg_vertex.glsl", "./Shader/bg_fragment.glsl");
 
 	plainShader = makeShader("./Shader/plainVert.glsl", "./Shader/plainFrag.glsl");
 	texShader = makeShader("./Shader/tex_vertex.glsl", "./Shader/tex_fragement.glsl");
+
+	pigShader = makeShader("./Shader/obj_vertex.glsl", "./Shader/obj_fragment.glsl");
 
 	initBuffer(&sphereVAO, &sphereVertexCount, "./OBJ/fence.obj");
 
@@ -45,6 +49,9 @@ void Scene::initialize()
 	// 나무 설치
 	initBuffer(&treeVAO, &treeVertexCount, "./OBJ/tree_up.obj");
 	initBuffer(&treeVAO2, &treeVertexCount2, "./OBJ/tree_bottom.obj");
+
+	// 동물 그릴용 큐브
+	initBuffer(&animalVAO, &animalVertexCount,"./OBJ/cube.obj");
 
 	// 집 설치
 	initBuffer(&house_top_VAO, &houseTopVertexCount, "./OBJ/house_top.obj");
@@ -76,6 +83,9 @@ void Scene::initialize()
 	std::string filenames7 = { "./Img/store.png" };
 	initTexture(&houseTexture[1], 1, &filenames7);
 
+	std::string filenames8 = { "./Img/storeScene.png" };
+	initTexture(&storeTexture, 1, &filenames8);
+
 	player = new PlayerObject;
 
 	player->rotateY(180.f);
@@ -101,7 +111,20 @@ void Scene::initialize()
 		rotateTreeY[i] = static_cast<float>(std::rand()) / RAND_MAX * 360.0f;
 	}
 
-	
+	pigs[0] = new Pig; // pig는 게임객체... 업캐스팅........
+	pigs[0]->setShader(pigShader);
+	pigs[0]->setVAO(animalVAO,animalVertexCount);
+	pigs[0]->setPosition(-5.f, 0.f, 0.f);
+
+	pigs[1] = new Pig;
+	pigs[1]->setShader(pigShader);
+	pigs[1]->setVAO(animalVAO, animalVertexCount);
+	pigs[1]->setPosition(-5.f, 0.f, 0.f);
+
+	pigs[2] = new Pig;
+	pigs[2]->setShader(pigShader);
+	pigs[2]->setVAO(animalVAO, animalVertexCount);
+	pigs[2]->setPosition(-5.f, 0.f, 0.f);
 }
 
 void Scene::release()
@@ -112,8 +135,12 @@ void Scene::release()
 	//for (int i = 0; i < townObjectCount; ++i)
 	//	delete townObjects[i];
 
+	for (int i = 0; i < 3; ++i)
+		delete pigs[i];
+
 	delete player;
 }
+
 
 void Scene::update(float elapsedTime)
 {
@@ -121,13 +148,32 @@ void Scene::update(float elapsedTime)
 	// 플레이어 업뎃 
 	player->update(elapsedTime);
 
+	const glm::vec3 playerPosition = player->getPosition();
+
+	for (int i = 0; i < 3; ++i) {
+		const glm::vec3 pigPosition = pigs[i]->getPosition();
+
+		if (playerPosition[0] > pigPosition[0] - 1.5f and
+			playerPosition[0] < pigPosition[0] + 1.5f and
+			playerPosition[2] > pigPosition[2] - 1.5f and
+			playerPosition[2] < pigPosition[2] + 1.5f) {
+
+			//std::cout << playerPosition[0] << std::endl;
+			//std::cout << playerPosition[2] << std::endl;
+			//std::cout << i << "번째 pig posX :" << pigPosition[0] << std::endl;
+			//std::cout << i << "번째 pig posZ :" << pigPosition[2] << std::endl;
+
+			std::cout << i << " 번째 pig 와 만남!!" << std::endl;
+		}
+	}
+
 
 	// 객체들 업데이트..
 	/*for (int i = 0; i < objectCount; ++i)
 		objects[i]->update(elapsedTime);*/	// 업캐스팅 시에도 RotateObject의 update가 호출된다! -> virtual
 
-		/*for (int i = 0; i < townObjectCount; ++i)
-			townObjects[i]->update(elapsedTime);*/
+	for (int i = 0; i < 3; ++i)
+		pigs[i]->update(elapsedTime);
 }
 
 void Scene::draw() const
@@ -157,7 +203,7 @@ void Scene::draw() const
 
 			GLint worldLoc = glGetUniformLocation(texShader, "modelTransform");
 			if (worldLoc < 0)
-				std::cout << "worldLoc 찾지 못함\n";
+				std::cout << "bgShader worldLoc 찾지 못함\n";
 			else
 				glUniformMatrix4fv(worldLoc, 1, GL_FALSE, glm::value_ptr(matrix));
 
@@ -177,7 +223,7 @@ void Scene::draw() const
 
 			GLint worldLoc = glGetUniformLocation(texShader, "modelTransform");
 			if (worldLoc < 0)
-				std::cout << "worldLoc 찾지 못함\n";
+				std::cout << "bgShader worldLoc 찾지 못함\n";
 			else
 				glUniformMatrix4fv(worldLoc, 1, GL_FALSE, glm::value_ptr(matrix));
 
@@ -214,7 +260,7 @@ void Scene::draw() const
 			glm::mat4 matrix = translateMatrix * rotMatrixY * sclaeMatrix;
 
 
-			GLint worldLoc = glGetUniformLocation(texShader, "modelTransform");
+			GLint worldLoc = glGetUniformLocation(bgShader, "modelTransform");
 			if (worldLoc < 0)
 				std::cout << "worldLoc 찾지 못함\n";
 			else
@@ -266,18 +312,33 @@ void Scene::draw() const
 	}
 
 
+	glUseProgram(pigShader);
 
+	// 카메라, 투영은 씬 전체에 적용..
+	GLint viewLoc = glGetUniformLocation(pigShader, "viewTransform");
+	if (viewLoc < 0)
+		std::cout << "viewLoc 찾지 못함\n";
+	GLint projLoc = glGetUniformLocation(pigShader, "projTransform");
+	if (projLoc < 0)
+		std::cout << "projLoc 찾지 못함\n";
+	GLint cameraPosLoc = glGetUniformLocation(pigShader, "cameraPos");
+	if (cameraPosLoc < 0)
+		std::cout << "cameraPosLoc 찾지 못함\n";
+
+	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
+	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projMatrix));
+	glUniform3f(cameraPosLoc, cameraPos.x, cameraPos.y, cameraPos.z);
 
 	glUseProgram(shader);
 
 	// 카메라, 투영은 씬 전체에 적용..
-	GLint viewLoc = glGetUniformLocation(shader, "viewTransform");
+	viewLoc = glGetUniformLocation(shader, "viewTransform");
 	if (viewLoc < 0)
 		std::cout << "viewLoc 찾지 못함\n";
-	GLint projLoc = glGetUniformLocation(shader, "projTransform");
+	projLoc = glGetUniformLocation(shader, "projTransform");
 	if (projLoc < 0)
 		std::cout << "projLoc 찾지 못함\n";
-	GLint cameraPosLoc = glGetUniformLocation(shader, "cameraPos");
+	cameraPosLoc = glGetUniformLocation(shader, "cameraPos");
 	if (cameraPosLoc < 0)
 		std::cout << "cameraPosLoc 찾지 못함\n";
 
@@ -289,6 +350,9 @@ void Scene::draw() const
 	// 오브젝트 그리기
 	player->draw();		// 지금 플레이어 안그리긴 해도... 나중에 그릴 수 있으니 호출해준다
 
+	for (auto& pig : pigs) {
+
+	}
 	/*for (int i = 0; i < objectCount; ++i)
 		objects[i]->draw();	*/	// 부모 클래스에서 draw를 virtual.. 
 		// 순수가상함수로 만들어줬기에 그의 자식클래스의 draw를 가져와그리는것이다..
@@ -441,7 +505,7 @@ void Scene::draw() const
 
 	translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 1.65f, 11.6f));
 	rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(20.f), glm::vec3(0.f, 1.f, 0.f));
-	sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f/1.5f, 1.f/1.5f, 0.001f));
+	sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 1.5f, 1.f / 1.5f, 0.001f));
 
 	matrix = translateMatrix * rotMatrixY * sclaeMatrix;
 
@@ -606,7 +670,7 @@ void Scene::draw() const
 	}
 
 	// --------------------------------- 
-	// 집 그리기
+	// 상점 그리기
 
 	{
 		glUseProgram(texShader);
@@ -680,7 +744,7 @@ void Scene::draw() const
 
 		translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(10.f, 3.f, 1.8f));
 		rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
-		sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(2.f,1.f, 0.001f));
+		sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(2.f, 1.f, 0.001f));
 
 		matrix = translateMatrix * rotMatrixY * sclaeMatrix;
 
@@ -701,15 +765,15 @@ void Scene::draw() const
 
 	if (player->isStoreShow) {
 		{
-			
+
 			glUseProgram(texShader);
 
 			GLuint usingLight = glGetUniformLocation(texShader, "useLight");
 			glUniform1i(usingLight, GL_FALSE);
 
-			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(10.f,1.f,1.6f));
+			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(10.f, 1.5f, 1.8f));
 			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
-			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(2.f, 2.f, 0.001f));
+			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(2.5f, 2.5f / 2.f, 0.001f));
 
 			matrix = translateMatrix * rotMatrixY * sclaeMatrix;
 
@@ -719,13 +783,16 @@ void Scene::draw() const
 			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
 
 			glBindVertexArray(cubeVAO);
-			glBindTexture(GL_TEXTURE_2D, houseTexture[1]);
+			glBindTexture(GL_TEXTURE_2D, storeTexture);
 			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
 
 			usingLight = glGetUniformLocation(texShader, "useLight");
 			glUniform1i(usingLight, GL_TRUE);
 		}
 	}
+
+	for (int i = 0; i < 3; ++i)
+		pigs[i]->draw();
 }
 
 void Scene::keyboard(unsigned char key, bool isPressed)
@@ -734,6 +801,30 @@ void Scene::keyboard(unsigned char key, bool isPressed)
 
 	if (isPressed) {			// 눌러졌을 때
 		switch (key) {
+
+		case '0':
+			if (player->isStoreShow) {
+				std::cout << "돼지 구매 " << std::endl;
+			}
+
+			break;
+		case '1':
+			if (player->isStoreShow) {
+				std::cout << "돼지 구매 " << std::endl;
+			}
+			break;
+		case '2':
+			if (player->isStoreShow) {
+				std::cout << "돼지 구매 " << std::endl;
+			}
+			break;
+		case '3':
+			if (player->isStoreShow) {
+				std::cout << "돼지 구매 " << std::endl;
+			}
+			break;
+
+
 		default:
 			break;
 		}
@@ -766,9 +857,10 @@ void Scene::mouse(int button, int state, int x, int y)
 			float xPos = (static_cast<float>(x) / width * 2.f - 1.f);
 			float yPos = -(static_cast<float>(y) / height * 2.f - 1.f);
 
-			//std::cout << "좌클릭 : " << x << ", " << y << std::endl;
-			//std::cout << "OpenGL x 좌표는 " << xPos << std::endl;
-			//std::cout << "OpenGL y 좌표는 " << yPos << std::endl;
+			std::cout << "좌클릭 : " << x << ", " << y << std::endl;
+			std::cout << "OpenGL x 좌표는 " << xPos << std::endl;
+			std::cout << "OpenGL y 좌표는 " << yPos << std::endl;
+
 
 			break;
 		}

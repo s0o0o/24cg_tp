@@ -1,5 +1,7 @@
 #include "TownObject.h"
+#include "PlayerObject.h"
 #include "Scene.h"
+#include "library.h"
 #include <iostream>
 
 
@@ -23,7 +25,7 @@ TownObject::~TownObject()
 
 void TownObject::initilize()
 {
-
+	
 }
 
 void TownObject::update(float elapseTime)
@@ -34,14 +36,7 @@ void TownObject::update(float elapseTime)
 void TownObject::draw() const
 {
 	
-	GLuint modelLoc = glGetUniformLocation(shader, "modelTransform");
-	if (modelLoc < 0)
-		std::cout << " modelLoc 찾을수 없음!";
-	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(worldTransform));
-
-	glBindVertexArray(VAO);
-	glDrawArrays(GL_TRIANGLES, 0, vertexCount);
-
+	
 }
 
 void TownObject::release()

@@ -22,7 +22,7 @@ void RotateObject::update(float elapseTime)
 
 void RotateObject::draw() const
 {
-
+	glUseProgram(shader);
 	GLuint modelLoc = glGetUniformLocation(shader, "modelTransform");
 	if (modelLoc < 0)
 		std::cout << " modelLoc 찾을수 없음!";

@@ -28,6 +28,9 @@
     <Filter Include="GameObject\town">
       <UniqueIdentifier>{b8eab7fd-7739-486e-973a-e44bfae33c1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Animal">
+      <UniqueIdentifier>{f326870b-91ae-4661-b6b5-9a233e56e9d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -51,6 +54,12 @@
     <ClInclude Include="TownObject.h">
       <Filter>GameObject\town</Filter>
     </ClInclude>
+    <ClInclude Include="Pig.h">
+      <Filter>GameObject\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimalScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -73,6 +82,12 @@
     </ClCompile>
     <ClCompile Include="TownObject.cpp">
       <Filter>GameObject\town</Filter>
+    </ClCompile>
+    <ClCompile Include="Pig.cpp">
+      <Filter>GameObject\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimalScene.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +119,12 @@
       <Filter>소스 파일\Shader</Filter>
     </None>
     <None Include="Shader\bg_fragment.glsl">
+      <Filter>소스 파일\Shader</Filter>
+    </None>
+    <None Include="Shader\Animalfragment.glsl">
+      <Filter>소스 파일\Shader</Filter>
+    </None>
+    <None Include="Shader\Animalvertex.glsl">
       <Filter>소스 파일\Shader</Filter>
     </None>
   </ItemGroup>

@@ -10,6 +10,8 @@ class TownObject : public GameObject {
 	float rotateSpeed;
 
 	GLuint fenceShader;
+
+	
 public:
 	TownObject();
 	virtual ~TownObject();
@@ -19,6 +21,6 @@ public:
 	virtual void draw() const override;
 	virtual void release() override;
 
-
+	
 };
 

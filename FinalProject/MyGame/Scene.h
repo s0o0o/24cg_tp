@@ -11,17 +11,18 @@ class PlayerObject;
 
 class Scene
 {
-private:
+public:
 	GLuint shader;
 	GLuint plainShader;
 	GLuint objShader;
-
+	GLuint bgShader;
 	GLuint texShader;
+	GLuint pigShader;
 
 	GLuint sphereVAO;
 	int sphereVertexCount;
-	GLuint teapotVAO;
-	int teapotVertexCount;
+	GLuint animalVAO;
+	int animalVertexCount;
 
 	GLuint fenceVAO;
 	GLuint BGTexture, BGVAO;
@@ -46,11 +47,15 @@ private:
 	GLuint treeVAO, treeVAO2;
 	int treeVertexCount, treeVertexCount2;
 
+	GLuint storeTexture;
+
 	GLint usingLight;
 
 	PlayerObject* player;
 
 	GameObject* objects[10];
+
+	GameObject* pigs[30];
 
 	float rotateTreeY[10];
 

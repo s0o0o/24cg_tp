@@ -133,8 +133,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AnimalScene.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="library.h" />
+    <ClInclude Include="Pig.h" />
     <ClInclude Include="PlayerObject.h" />
     <ClInclude Include="RotateObject.h" />
     <ClInclude Include="Scene.h" />
@@ -142,8 +149,15 @@
     <ClInclude Include="TownObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnimalScene.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pig.cpp" />
     <ClCompile Include="PlayerObject.cpp" />
     <ClCompile Include="RotateObject.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -151,6 +165,8 @@
     <ClCompile Include="TownObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Shader\Animalfragment.glsl" />
+    <None Include="Shader\Animalvertex.glsl" />
     <None Include="Shader\bg_fragment.glsl" />
     <None Include="Shader\bg_vertex.glsl" />
     <None Include="Shader\obj_fragment.glsl" />

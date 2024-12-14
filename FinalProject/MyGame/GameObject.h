@@ -2,6 +2,10 @@
 
 #include "library.h"
 
+#include <string>
+#include <vector>
+
+
 class GameObject
 {
 protected:		// 부모 클래스가 될 것이다..
@@ -37,5 +41,9 @@ public:
 	void move(glm::vec3 dir, float value);
 	void moveForward(float value);
 
+protected:
+	static void initBuffer(GLuint* VAO, GLsizei* vertexCount, std::string objFilename);
+public:
+	static std::vector<glm::vec3> readOBJ(std::string filename);
 };
 
