@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include <random>
 
 class GameObject;
 class PlayerObject;
@@ -17,7 +18,7 @@ public:
 	GLuint objShader;
 	GLuint bgShader;
 	GLuint texShader;
-	GLuint pigShader;
+	GLuint animalShader;
 
 	GLuint sphereVAO;
 	int sphereVertexCount;
@@ -47,6 +48,12 @@ public:
 	GLuint treeVAO, treeVAO2;
 	int treeVertexCount, treeVertexCount2;
 
+
+
+	GLuint ddongVAO, ddongLogTexture, feedLogTexture;
+	int ddongVertexCount;
+	int ddongTimeCount;
+
 	GLuint storeTexture;
 
 	GLint usingLight;
@@ -56,8 +63,21 @@ public:
 	GameObject* objects[10];
 
 	GameObject* pigs[30];
+	int pigCount;
+	GameObject* alpacas[30];
+	int alpacaCount;
+	GameObject* penguins[30];
+	int penguinCount;
+
+	GameObject* chics[30];
+	int chickenCount;
+	GameObject* foxes[30];
+	int foxCount;
 
 	float rotateTreeY[10];
+
+	glm::vec3 light;
+	bool isLightMove;
 
 	int objectCount;
 

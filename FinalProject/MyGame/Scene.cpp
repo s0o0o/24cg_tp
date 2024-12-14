@@ -10,9 +10,23 @@
 #include "PlayerObject.h"
 #include "TownObject.h"
 #include "Pig.h"
+#include "Alpaca.h"
+#include "Penguin.h"
+#include "Chic.h"
+#include "Fox.h"
+
+#include <random>
 
 #define STB_IMAGE_IMPLEMENTATION		// 단 하나의 .cpp 에만 define 해줘야 한다.. 중복 include 주의!
 #include <stb_image.h>
+
+struct Ddong {
+	float x, y, z;
+
+	bool isDraw;
+	bool isNear;
+};
+std::vector<Ddong> ddongs;
 
 Scene::Scene(int winWidth, int winHeight)
 	: width{ winWidth }, height{ winHeight }
@@ -27,6 +41,9 @@ Scene::~Scene()
 
 void Scene::initialize()
 {
+
+	srand(static_cast<unsigned int>(time(NULL)));
+
 	shader = makeShader("./Shader/vertex.glsl", "./Shader/fragment.glsl");
 
 	objShader = makeShader("./Shader/obj_vertex.glsl", "./Shader/obj_fragment.glsl");
@@ -35,7 +52,7 @@ void Scene::initialize()
 	plainShader = makeShader("./Shader/plainVert.glsl", "./Shader/plainFrag.glsl");
 	texShader = makeShader("./Shader/tex_vertex.glsl", "./Shader/tex_fragement.glsl");
 
-	pigShader = makeShader("./Shader/Animalvertex.glsl", "./Shader/Animalfragment.glsl");
+	animalShader = makeShader("./Shader/Animalvertex.glsl", "./Shader/Animalfragment.glsl");
 
 	initBuffer(&sphereVAO, &sphereVertexCount, "./OBJ/fence.obj");
 
@@ -51,7 +68,7 @@ void Scene::initialize()
 	initBuffer(&treeVAO2, &treeVertexCount2, "./OBJ/tree_bottom.obj");
 
 	// 동물 그릴용 큐브
-	initBuffer(&animalVAO, &animalVertexCount,"./OBJ/cube.obj");
+	initBuffer(&animalVAO, &animalVertexCount, "./OBJ/cube.obj");
 
 	// 집 설치
 	initBuffer(&house_top_VAO, &houseTopVertexCount, "./OBJ/house_top.obj");
@@ -61,6 +78,8 @@ void Scene::initialize()
 	initBufferWithUV(&sign_top_VAO, &signTopVertexCount, "./OBJ/sign_up.obj");
 	initBufferWithUV(&sign_bottom_VAO, &signBottomVertexCount, "./OBJ/sign_bottom.obj");
 
+	// 똥 설치
+	initBuffer(&ddongVAO, &ddongVertexCount, "./OBJ/ddong.obj");
 
 	std::string filenames5 = { "./Img/farmsign_rest.png" };
 	initTexture(&signTexture[0], 1, &filenames5);
@@ -86,13 +105,24 @@ void Scene::initialize()
 	std::string filenames8 = { "./Img/storeScene.png" };
 	initTexture(&storeTexture, 1, &filenames8);
 
+	std::string filenames9 = { "./Img/ddongButton.png" };
+	initTexture(&ddongLogTexture, 1, &filenames9);
+
+	std::string filenames10 = { "./Img/feedButton.png" };
+	initTexture(&feedLogTexture, 1, &filenames10);
+
+	light.x = 0.f;
+	light.y = 2.f;
+	light.z = -2.f;
+	isLightMove = false;
+
 	player = new PlayerObject;
 
 	player->rotateY(180.f);
 
 	player->setPosition(0.f, 0.f, 15.f);
 
-	srand(clock());
+	//srand(clock());
 
 	objects[0] = new TownObject;		// 업캐스팅!! rotateObject는.. 돌고있는 객체는.. 게임의 객체이다!!
 	objects[0]->setShader(shader);
@@ -112,16 +142,32 @@ void Scene::initialize()
 	}
 
 	pigs[0] = new Pig; // pig는 게임객체... 업캐스팅........
-	pigs[0]->setShader(pigShader);
-	pigs[0]->setVAO(animalVAO,animalVertexCount);
+	pigs[0]->setShader(animalShader);
+	pigs[0]->setVAO(animalVAO, animalVertexCount);
 
 	pigs[1] = new Pig;
-	pigs[1]->setShader(pigShader);
+	pigs[1]->setShader(animalShader);
 	pigs[1]->setVAO(animalVAO, animalVertexCount);
 
-	pigs[2] = new Pig;
-	pigs[2]->setShader(pigShader);
-	pigs[2]->setVAO(animalVAO, animalVertexCount);
+	pigCount = 2;
+
+	alpacas[0] = new Alpaca; // alpaca는 게임객체... 업캐스팅........
+	alpacas[0]->setShader(animalShader);
+	alpacas[0]->setVAO(animalVAO, animalVertexCount);
+
+	alpacaCount = 1;
+
+	chics[0] = new Chic; // penguin는 게임객체... 업캐스팅........
+	chics[0]->setShader(animalShader);
+	chics[0]->setVAO(animalVAO, animalVertexCount);
+
+	chickenCount = 1;
+
+	foxes[0] = new Fox; // penguin는 게임객체... 업캐스팅........
+	foxes[0]->setShader(animalShader);
+	foxes[0]->setVAO(animalVAO, animalVertexCount);
+
+	foxCount = 1;
 }
 
 void Scene::release()
@@ -132,8 +178,20 @@ void Scene::release()
 	//for (int i = 0; i < townObjectCount; ++i)
 	//	delete townObjects[i];
 
-	for (int i = 0; i < 3; ++i)
+	for (int i = 0; i < pigCount; ++i)
 		delete pigs[i];
+
+	for (int i = 0; i < alpacaCount; ++i)
+		delete alpacas[i];
+
+	for (int i = 0; i < penguinCount; ++i)
+		delete penguins[i];
+
+	for (int i = 0; i < chickenCount; ++i)
+		delete chics[i];
+
+	for (int i = 0; i < foxCount; ++i)
+		delete foxes[i];
 
 	delete player;
 }
@@ -147,7 +205,7 @@ void Scene::update(float elapsedTime)
 
 	const glm::vec3 playerPosition = player->getPosition();
 
-	for (int i = 0; i < 3; ++i) {
+	for (int i = 0; i < pigCount; ++i) {
 		const glm::vec3 pigPosition = pigs[i]->getPosition();
 
 		if (playerPosition[0] > pigPosition[0] - 1.5f and
@@ -160,17 +218,190 @@ void Scene::update(float elapsedTime)
 			//std::cout << i << "번째 pig posX :" << pigPosition[0] << std::endl;
 			//std::cout << i << "번째 pig posZ :" << pigPosition[2] << std::endl;
 
-			std::cout << i << " 번째 pig 와 만남!!" << std::endl;
+			pigs[i]->isNear = true;
+			//if (pigs[i]->isNear) std::cout << i << " 번째 pig 와 만남!!" << std::endl;
+
+		}
+		else {
+			pigs[i]->isNear = false;
 		}
 	}
 
+	for (int i = 0; i < alpacaCount; ++i) {
+		const glm::vec3 animalPosition = alpacas[i]->getPosition();
+
+		if (playerPosition[0] > animalPosition[0] - 1.5f and
+			playerPosition[0] < animalPosition[0] + 1.5f and
+			playerPosition[2] > animalPosition[2] - 1.5f and
+			playerPosition[2] < animalPosition[2] + 1.5f) {
+
+			alpacas[i]->isNear = true;
+			//if (alpacas[i]->isNear) std::cout << i << " 번째 alpaca 와 만남!!" << std::endl;
+
+		}
+		else {
+			alpacas[i]->isNear = false;
+		}
+	}
+
+
+	for (int i = 0; i < penguinCount; ++i) {
+		const glm::vec3 animalPosition = penguins[i]->getPosition();
+
+		if (playerPosition[0] > animalPosition[0] - 1.5f and
+			playerPosition[0] < animalPosition[0] + 1.5f and
+			playerPosition[2] > animalPosition[2] - 1.5f and
+			playerPosition[2] < animalPosition[2] + 1.5f) {
+
+			penguins[i]->isNear = true;
+			//if (penguins[i]->isNear) std::cout << i << " 번째 penguin 와 만남!!" << std::endl;
+
+		}
+		else {
+			penguins[i]->isNear = false;
+		}
+	}
+
+	for (int i = 0; i < chickenCount; ++i) {
+		const glm::vec3 animalPosition = chics[i]->getPosition();
+
+		if (playerPosition[0] > animalPosition[0] - 1.5f and
+			playerPosition[0] < animalPosition[0] + 1.5f and
+			playerPosition[2] > animalPosition[2] - 1.5f and
+			playerPosition[2] < animalPosition[2] + 1.5f) {
+
+			chics[i]->isNear = true;
+			//if (penguins[i]->isNear) std::cout << i << " 번째 penguin 와 만남!!" << std::endl;
+
+		}
+		else {
+			chics[i]->isNear = false;
+		}
+	}
+
+	for (int i = 0; i < foxCount; ++i) {
+		const glm::vec3 animalPosition = foxes[i]->getPosition();
+
+		if (playerPosition[0] > animalPosition[0] - 1.5f and
+			playerPosition[0] < animalPosition[0] + 1.5f and
+			playerPosition[2] > animalPosition[2] - 1.5f and
+			playerPosition[2] < animalPosition[2] + 1.5f) {
+
+			foxes[i]->isNear = true;
+			//if (penguins[i]->isNear) std::cout << i << " 번째 penguin 와 만남!!" << std::endl;
+
+		}
+		else {
+			foxes[i]->isNear = false;
+		}
+	}
+
+	if (isLightMove) {
+		light.x += 0.001f;
+		if (light.x >= 5.f) {
+			isLightMove = false;
+		}
+	}
+	else {
+		light.x -= 0.001f;
+		if (light.x <= -5.f) {
+			isLightMove = true;
+		}
+	}
+
+	ddongTimeCount++;
+	if (ddongTimeCount > 2500) {
+		float x = -10.f + static_cast<float>(std::rand()) / (static_cast<float>(RAND_MAX / 8.f));
+		float z = -5.f + static_cast<float>(std::rand()) / (static_cast<float>(RAND_MAX / 15.f));
+
+		ddongs.emplace_back(Ddong{ x, 0.f, z , true ,false });
+		ddongTimeCount = 0;
+	}
+
+	for (auto& ddong : ddongs) {
+		if (ddong.isDraw)
+		{
+			if (playerPosition[0] > ddong.x - 1.2f and
+				playerPosition[0] < ddong.x + 1.2f and
+				playerPosition[2] > ddong.z - 1.2f and
+				playerPosition[2] < ddong.z + 1.2f) {
+				//	std::cout << "똥과 만남!!" << std::endl;
+				ddong.isNear = true;
+			}
+			else {
+				ddong.isNear = false;
+			}
+		}
+	}
 
 	// 객체들 업데이트..
 	/*for (int i = 0; i < objectCount; ++i)
 		objects[i]->update(elapsedTime);*/	// 업캐스팅 시에도 RotateObject의 update가 호출된다! -> virtual
 
-	for (int i = 0; i < 3; ++i)
+	for (int i = 0; i < pigCount; ++i) {
 		pigs[i]->update(elapsedTime);
+		if (pigs[i]->feedNum >= 5) {
+			if (pigs[i]->isBaby) {
+				pigs[i]->isBaby = false;
+			}
+			if (not pigs[i]->isBaby) {
+				//std::cout << " 이제 돼지 어른" << std::endl;
+			}
+		}
+	}
+
+	for (int i = 0; i < alpacaCount; ++i)
+	{
+		alpacas[i]->update(elapsedTime);
+		if (alpacas[i]->feedNum >= 5) {
+			if (alpacas[i]->isBaby) {
+				alpacas[i]->isBaby = false;
+			}
+			if (not alpacas[i]->isBaby) {
+				//std::cout << " 이제 돼지 어른" << std::endl;
+			}
+		}
+	}
+
+	for (int i = 0; i < penguinCount; ++i)
+	{
+		penguins[i]->update(elapsedTime);
+		if (penguins[i]->feedNum >= 5) {
+			if (penguins[i]->isBaby) {
+				penguins[i]->isBaby = false;
+			}
+			if (not penguins[i]->isBaby) {
+				//std::cout << " 이제 돼지 어른" << std::endl;
+			}
+		}
+	}
+	
+
+	for (int i = 0; i < chickenCount; ++i)
+	{
+		chics[i]->update(elapsedTime);
+		if (chics[i]->feedNum >= 5) {
+			if (chics[i]->isBaby) {
+				chics[i]->isBaby = false;
+			}
+			if (not chics[i]->isBaby) {
+				//std::cout << " 이제 돼지 어른" << std::endl;
+			}
+		}
+
+	}
+
+	for (int i = 0; i < foxCount; ++i) {
+		foxes[i]->update(elapsedTime);
+		if (foxes[i]->feedNum >= 5) {
+			if (foxes[i]->isBaby) {
+				foxes[i]->isBaby = false;
+			}
+			if (not foxes[i]->isBaby) {
+				//std::cout << " 이제 돼지 어른" << std::endl;
+			}
+		}
+	}
 }
 
 void Scene::draw() const
@@ -309,20 +540,23 @@ void Scene::draw() const
 	}
 
 
-	glUseProgram(pigShader);
+	glUseProgram(animalShader);
 
 	// 카메라, 투영은 씬 전체에 적용..
-	GLint viewLoc = glGetUniformLocation(pigShader, "viewTransform");
+	GLint viewLoc = glGetUniformLocation(animalShader, "viewTransform");
 	if (viewLoc < 0)
 		std::cout << "viewLoc 찾지 못함\n";
-	GLint projLoc = glGetUniformLocation(pigShader, "projTransform");
+	GLint projLoc = glGetUniformLocation(animalShader, "projTransform");
 	if (projLoc < 0)
 		std::cout << "projLoc 찾지 못함\n";
-	
+	GLint lightPos = glGetUniformLocation(animalShader, "lightPos");
+	if (projLoc < 0)
+		std::cout << "lightPos 찾지 못함\n";
 
+	glUniform3f(lightPos, light.x, light.y, light.z);
 	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projMatrix));
-//	glUniform3f(cameraPosLoc, cameraPos.x, cameraPos.y, cameraPos.z);
+	//	glUniform3f(cameraPosLoc, cameraPos.x, cameraPos.y, cameraPos.z);
 
 	glUseProgram(shader);
 
@@ -345,9 +579,6 @@ void Scene::draw() const
 	// 오브젝트 그리기
 	player->draw();		// 지금 플레이어 안그리긴 해도... 나중에 그릴 수 있으니 호출해준다
 
-	for (auto& pig : pigs) {
-
-	}
 	/*for (int i = 0; i < objectCount; ++i)
 		objects[i]->draw();	*/	// 부모 클래스에서 draw를 virtual.. 
 		// 순수가상함수로 만들어줬기에 그의 자식클래스의 draw를 가져와그리는것이다..
@@ -786,8 +1017,189 @@ void Scene::draw() const
 		}
 	}
 
-	for (int i = 0; i < 3; ++i)
+	for (int i = 0; i < pigCount; ++i) {
 		pigs[i]->draw();
+		if (pigs[i]->isNear) {
+			glDisable(GL_DEPTH_TEST);
+			glUseProgram(bgShader);
+
+			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+			matrix = sclaeMatrix;
+
+			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+			if (modelLoc < 0)
+				std::cout << " modelLoc 찾을수 없음!";
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+			glBindVertexArray(cubeVAO);
+			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+			glEnable(GL_DEPTH_TEST);
+		}
+	}
+
+	for (int i = 0; i < alpacaCount; ++i) {
+		alpacas[i]->draw();
+		if (alpacas[i]->isNear) {
+			glDisable(GL_DEPTH_TEST);
+			glUseProgram(bgShader);
+
+			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+			matrix = sclaeMatrix;
+
+			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+			if (modelLoc < 0)
+				std::cout << " modelLoc 찾을수 없음!";
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+			glBindVertexArray(cubeVAO);
+			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+			glEnable(GL_DEPTH_TEST);
+		}
+	}
+
+
+	for (int i = 0; i < penguinCount; ++i) {
+		penguins[i]->draw();
+		if (penguins[i]->isNear) {
+			glDisable(GL_DEPTH_TEST);
+			glUseProgram(bgShader);
+
+			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+			matrix = sclaeMatrix;
+
+			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+			if (modelLoc < 0)
+				std::cout << " modelLoc 찾을수 없음!";
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+			glBindVertexArray(cubeVAO);
+			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+			glEnable(GL_DEPTH_TEST);
+		}
+	}
+
+	for (int i = 0; i < chickenCount; ++i) {
+		chics[i]->draw();
+		if (chics[i]->isNear) {
+			glDisable(GL_DEPTH_TEST);
+			glUseProgram(bgShader);
+
+			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+			matrix = sclaeMatrix;
+
+			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+			if (modelLoc < 0)
+				std::cout << " modelLoc 찾을수 없음!";
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+			glBindVertexArray(cubeVAO);
+			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+			glEnable(GL_DEPTH_TEST);
+		}
+	}
+
+	for (int i = 0; i < foxCount; ++i) {
+		foxes[i]->draw();
+		if (foxes[i]->isNear) {
+			glDisable(GL_DEPTH_TEST);
+			glUseProgram(bgShader);
+
+			translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+			rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+			sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+			matrix = sclaeMatrix;
+
+			modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+			if (modelLoc < 0)
+				std::cout << " modelLoc 찾을수 없음!";
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+			glBindVertexArray(cubeVAO);
+			glBindTexture(GL_TEXTURE_2D, feedLogTexture);
+			glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+			glEnable(GL_DEPTH_TEST);
+		}
+	}
+
+
+
+	// 똥그릴거임..
+	for (auto& ddong : ddongs) {
+		if (ddong.isDraw)
+		{
+			glUseProgram(objShader);
+			glBindVertexArray(ddongVAO);
+			viewLoc = glGetUniformLocation(objShader, "viewTransform");
+			if (viewLoc < 0)
+				std::cout << "viewLoc 찾지 못함\n";
+			projLoc = glGetUniformLocation(objShader, "projTransform");
+			if (projLoc < 0)
+				std::cout << "projLoc 찾지 못함\n";
+
+			glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
+			glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projMatrix));
+
+			glm::mat4 translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(ddong.x, 0.f, ddong.z));
+			glm::mat4 rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(90.f), glm::vec3(0.f, 1.f, 0.f));
+
+			glm::mat4 sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(0.3f));
+			glm::mat4 matrix = translateMatrix * rotMatrixY * sclaeMatrix;
+
+			GLuint modelLoc = glGetUniformLocation(objShader, "modelTransform");
+			if (modelLoc < 0)
+				std::cout << " modelLoc 찾을수 없음!";
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+			GLint color = glGetUniformLocation(objShader, "globalColor");
+			glUniform1i(useGlobalColor, GL_TRUE);
+			if (color < 0)
+				std::cout << "globalColor 찾지 못함\n";
+			else
+				glUniform3f(color, 93 / 255.f, 44 / 255.f, 11 / 255.f);
+
+
+			glDrawArrays(GL_TRIANGLES, 0, ddongVertexCount);
+		}
+		if (ddong.isDraw and ddong.isNear) {
+			{
+				glDisable(GL_DEPTH_TEST);
+				glUseProgram(bgShader);
+
+				translateMatrix = glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, 0.f));
+				rotMatrixY = glm::rotate(glm::mat4(1.f), glm::radians(0.f), glm::vec3(0.f, 1.f, 0.f));
+				sclaeMatrix = glm::scale(glm::mat4(1.f), glm::vec3(1.5f / 2, 1.5f / 4, 0.001f));
+
+				matrix = sclaeMatrix;
+
+				modelLoc = glGetUniformLocation(bgShader, "modelTransform");
+				if (modelLoc < 0)
+					std::cout << " modelLoc 찾을수 없음!";
+				glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+
+				glBindVertexArray(cubeVAO);
+				glBindTexture(GL_TEXTURE_2D, ddongLogTexture);
+				glDrawArrays(GL_TRIANGLES, 0, cubeVertexCount);
+				glEnable(GL_DEPTH_TEST);
+			}
+		}
+	}
 }
 
 void Scene::keyboard(unsigned char key, bool isPressed)
@@ -819,6 +1231,44 @@ void Scene::keyboard(unsigned char key, bool isPressed)
 			}
 			break;
 
+		case 32:
+			for (auto& ddong : ddongs) {
+				if (ddong.isNear and ddong.isDraw) {
+					ddong.isDraw = false;
+				}
+			}
+			for (int i = 0; i < pigCount; ++i) {
+				if (pigs[i]->isNear) {
+					++pigs[i]->feedNum;
+					std::cout << "돼지 밥준 횟수 : " << pigs[i]->feedNum << std::endl;
+
+				}
+			}
+			for (int i = 0; i < alpacaCount; ++i) {
+				if (alpacas[i]->isNear) {
+					++alpacas[i]->feedNum;
+					std::cout << "알파카 밥준 횟수 : " << alpacas[i]->feedNum << std::endl;
+				}
+			}
+			for (int i = 0; i < penguinCount; ++i) {
+				if (penguins[i]->isNear) {
+					++penguins[i]->feedNum;
+					std::cout << "펭귄  밥준 횟수 : " << penguins[i]->feedNum << std::endl;
+				}
+			}
+			for (int i = 0; i < chickenCount; ++i) {
+				if (chics[i]->isNear) {
+					++chics[i]->feedNum;
+					std::cout << "치킨  밥준 횟수 : " << chics[i]->feedNum << std::endl;
+				}
+			}
+			for (int i = 0; i < foxCount; ++i) {
+				if (foxes[i]->isNear) {
+					++foxes[i]->feedNum;
+					std::cout << "여우 밥준 횟수 : " << foxes[i]->feedNum << std::endl;
+				}
+			}
+			break;
 
 		default:
 			break;
@@ -1182,7 +1632,7 @@ std::vector<glm::vec3> Scene::readOBJ(std::string filename)
 
 	// c++ stream --> input output을 해주는 흐름?
 
-	srand(static_cast<unsigned int>(time(nullptr)));
+	//srand(static_cast<unsigned int>(time(nullptr)));
 
 	std::vector<glm::vec3> vertex;
 	std::vector<glm::vec3> color;

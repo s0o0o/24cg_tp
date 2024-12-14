@@ -133,14 +133,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Alpaca.h" />
     <ClInclude Include="AnimalScene.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Chic.h" />
+    <ClInclude Include="Fox.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="library.h" />
+    <ClInclude Include="Penguin.h" />
     <ClInclude Include="Pig.h" />
     <ClInclude Include="PlayerObject.h" />
     <ClInclude Include="RotateObject.h" />
@@ -149,14 +153,18 @@
     <ClInclude Include="TownObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Alpaca.cpp" />
     <ClCompile Include="AnimalScene.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Chic.cpp" />
+    <ClCompile Include="Fox.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Penguin.cpp" />
     <ClCompile Include="Pig.cpp" />
     <ClCompile Include="PlayerObject.cpp" />
     <ClCompile Include="RotateObject.cpp" />
@@ -169,6 +177,7 @@
     <None Include="Shader\Animalvertex.glsl" />
     <None Include="Shader\bg_fragment.glsl" />
     <None Include="Shader\bg_vertex.glsl" />
+    <None Include="Shader\log_vertex.glsl" />
     <None Include="Shader\obj_fragment.glsl" />
     <None Include="Shader\obj_vertex.glsl" />
     <None Include="Shader\fragment.glsl" />

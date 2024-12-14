@@ -37,6 +37,7 @@ public :
 	bool isStoreShow;
 
 	
+	int feedNum;
 
 };
 

@@ -63,7 +63,7 @@ private:
 	float rotateFacePig;
 
 	//알파카 변수 >> 전체위치 yz, 왼오 다리각도, 바라보는 것
-	float moveAlpaX;
+	float movePenguinX;
 	float moveAlpaZ;
 	float rotateAlpaLeftLeg;
 	float rotateAlpaRightLeg;

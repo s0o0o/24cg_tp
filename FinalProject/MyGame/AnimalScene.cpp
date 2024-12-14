@@ -31,7 +31,7 @@ Scene::Scene(int winWidth, int winHeight)
 	rotateFacePig = 0.f;
 
 	//알파카 변수 >> 전체위치 yz, 왼오 다리각도, 바라보는 것
-	moveAlpaX = 4.f;
+	movePenguinX = 4.f;
 	moveAlpaZ = 0.f;
 	rotateAlpaLeftLeg = 0.f;
 	rotateAlpaRightLeg = 0.f;
@@ -645,7 +645,7 @@ void Scene::draw() const
 		// 알파카
 		//(0.92, 0.9, 0.8)
 		const glm::mat4 unitMat(1.f);
-		glm::mat4 moveFinal = glm::translate(unitMat, glm::vec3(moveAlpaX, 0.0f, moveAlpaZ));
+		glm::mat4 moveFinal = glm::translate(unitMat, glm::vec3(movePenguinX, 0.0f, moveAlpaZ));
 		glm::mat4 rotateDir = glm::rotate(unitMat, glm::radians(rotateFaceAlpa), glm::vec3(0.f, 1.f, 0.f));
 		// 다리 그리기
 		{

@@ -5,6 +5,7 @@
 #include "startScene.h"
 #include "PlayerObject.h"
 
+
 // 각종 콜백 함수 미리 선언
 void DisplayFunc(void);
 void ReshapeFunc(int width, int height);
@@ -56,7 +57,6 @@ int main(int argc, char** argv)
 	
 
 	
-
 	glEnable(GL_CULL_FACE);			// 컬링(뒷면 제거) 활성화
 	//glCullFace(GL_FRONT);			// 앞면 지울건지 뒷면 지울건지
 	//glFrontFace(GL_CCW);			// 어떤게 앞면인지?? GL_CW -> 시계, GL_CCW -> 반시계(기본값)

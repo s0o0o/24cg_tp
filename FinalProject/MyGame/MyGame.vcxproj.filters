@@ -60,6 +60,18 @@
     <ClInclude Include="AnimalScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Alpaca.h">
+      <Filter>GameObject\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Penguin.h">
+      <Filter>GameObject\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Chic.h">
+      <Filter>GameObject\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Fox.h">
+      <Filter>GameObject\Animal</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -67,9 +79,6 @@
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>GameObject</Filter>
     </ClCompile>
     <ClCompile Include="RotateObject.cpp">
       <Filter>GameObject\RotateObject</Filter>
@@ -88,6 +97,21 @@
     </ClCompile>
     <ClCompile Include="AnimalScene.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Alpaca.cpp">
+      <Filter>GameObject\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Penguin.cpp">
+      <Filter>GameObject\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Chic.cpp">
+      <Filter>GameObject\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Fox.cpp">
+      <Filter>GameObject\Animal</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +149,9 @@
       <Filter>소스 파일\Shader</Filter>
     </None>
     <None Include="Shader\Animalvertex.glsl">
+      <Filter>소스 파일\Shader</Filter>
+    </None>
+    <None Include="Shader\log_vertex.glsl">
       <Filter>소스 파일\Shader</Filter>
     </None>
   </ItemGroup>

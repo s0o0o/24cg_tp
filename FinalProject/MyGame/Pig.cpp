@@ -1,17 +1,15 @@
 #include "Pig.h"
 #include "PlayerObject.h"
 #include <iostream>
+#include <random>
 
 Pig::Pig()
 {
-	srand(clock());
+	//srand(static_cast<unsigned int>(time(NULL)));
 
 	float x = -10.f + static_cast<float>(std::rand()) / (static_cast<float>(RAND_MAX / 5.f));
 	float z = -5.f + static_cast<float>(std::rand()) / (static_cast<float>(RAND_MAX / 10.f));
 
-	//setPosition(x, 0.f, z);
-	isBaby = true;
-	isAdult = false;
 	rangeLimit = 1.f;
 
 	pigXDir = (rand() % 2 == 0) ? 1.f : -1.f;
@@ -21,11 +19,15 @@ Pig::Pig()
 	movePigX = x;
 	movePigZ = z;
 
+	isNear = false;
+	isBaby = true;
+
+	// 돼지
 	rotatePigLeftLeg = 0.f;
 	rotatePigRightLeg = 0.f;
 	rotateFacePig = 0.f;
 
-
+	// 아기 돼지
 	rotateBabyLeftLeg = 0.f;
 	rotateBabyRightLeg = 0.f;
 	rotateFaceBaby = 0.f;
@@ -40,7 +42,7 @@ Pig::Pig()
 
 Pig::~Pig()
 {
-//	delete this;
+	//	delete this;
 }
 
 void Pig::initilize()
@@ -68,105 +70,105 @@ void Pig::update(float elapseTime)
 	//	std::cout << " 가까이에 있다!!!! " << std::endl;
 	//}
 
-	
+
 	//rotateY(90.f);
 
 	worldTransform[3][0] = movePigX;
 	worldTransform[3][2] = movePigZ;
 
-	if (isBaby or isAdult) {
 
-		if(isBaby)
+
+	if (isBaby)
+	{
+		// 아기돼지 다리 각도 회전
+		if (isMaxRotateBaby)
 		{
-			// 아기돼지 다리 각도 회전
-			if (isMaxRotateBaby)
-			{
-				rotateBabyLeftLeg -= rotateSpeed;
-				rotateBabyRightLeg += rotateSpeed;
-				if (rotateBabyLeftLeg <= -10.f) {
-					isMaxRotateBaby = false;
-				}
-			}
-			else if (not isMaxRotateBaby) {
-				rotateBabyLeftLeg += rotateSpeed;
-				rotateBabyRightLeg -= rotateSpeed;
-				if (rotateBabyLeftLeg >= 10.f) {
-					isMaxRotateBaby = true;
-				}
+			rotateBabyLeftLeg -= rotateSpeed;
+			rotateBabyRightLeg += rotateSpeed;
+			if (rotateBabyLeftLeg <= -10.f) {
+				isMaxRotateBaby = false;
 			}
 		}
-		else if (isAdult) {
-			// 돼지 다리 각도 회전
-			if (isMaxRotatePig)
-			{
-				rotatePigLeftLeg -= rotateSpeed;
-				rotatePigRightLeg += rotateSpeed;
-				if (rotatePigLeftLeg <= -30.f) {
-					isMaxRotatePig = false;
-				}
-			}
-			else if (not isMaxRotatePig) {
-				rotatePigLeftLeg += rotateSpeed;
-				rotatePigRightLeg -= rotateSpeed;
-				if (rotatePigLeftLeg >= 30.f) {
-					isMaxRotatePig = true;
-				}
-			}
-
-		}
-
-		if (movePigX > -15.f and movePigX < -1.f
-			and movePigZ > -8.f and movePigZ < 9.f) {
-
-
-			if (pigXDir > 0) {
-				movePigX += 0.001f;
-			}
-			if (pigXDir < 0) {
-				movePigX -= 0.001f;
-			}
-			if (pigZDir > 0) {
-				movePigZ += 0.001f;
-			}
-			if (pigZDir < 0) {
-				movePigZ -= 0.001f;
-			}
-
-			if (movePigX <= -15.f + rangeLimit) {
-				pigXDir = 1.f;
-				
-				std::cout << pigXDir << std::endl;
-			}
-			if (movePigX >= -1.f - rangeLimit) {
-				pigXDir = -1.f;
-				
-				std::cout << pigXDir << std::endl;
-			}
-			if (movePigZ <= -8.f + rangeLimit) {
-				pigZDir = 1.f;
-				
-				std::cout << pigZDir << std::endl;
-			}
-			if (movePigZ >= 9.f - rangeLimit) {
-				pigZDir = -1.f;
-			
-				std::cout << pigZDir << std::endl;
-			}
-
-			if (pigXDir > 0 and pigZDir > 0) {
-				rotateFacePig = 45.f;
-			}	
-			if (pigXDir > 0 and pigZDir < 0) {
-				rotateFacePig = 135.f;
-			}	
-			if (pigXDir < 0 and pigZDir > 0) {
-				rotateFacePig = -45.f;
-			}	
-			if (pigXDir < 0 and pigZDir < 0) {
-				rotateFacePig = 225.f;
+		else if (not isMaxRotateBaby) {
+			rotateBabyLeftLeg += rotateSpeed;
+			rotateBabyRightLeg -= rotateSpeed;
+			if (rotateBabyLeftLeg >= 10.f) {
+				isMaxRotateBaby = true;
 			}
 		}
 	}
+	else if (not isBaby) {
+		// 돼지 다리 각도 회전
+		if (isMaxRotatePig)
+		{
+			rotatePigLeftLeg -= rotateSpeed;
+			rotatePigRightLeg += rotateSpeed;
+			if (rotatePigLeftLeg <= -30.f) {
+				isMaxRotatePig = false;
+			}
+		}
+		else if (not isMaxRotatePig) {
+			rotatePigLeftLeg += rotateSpeed;
+			rotatePigRightLeg -= rotateSpeed;
+			if (rotatePigLeftLeg >= 30.f) {
+				isMaxRotatePig = true;
+			}
+		}
+
+	}
+
+	if (movePigX > -15.f and movePigX < -1.f
+		and movePigZ > -8.f and movePigZ < 9.f) {
+
+
+		if (pigXDir > 0) {
+			movePigX += 0.001f;
+		}
+		if (pigXDir < 0) {
+			movePigX -= 0.001f;
+		}
+		if (pigZDir > 0) {
+			movePigZ += 0.001f;
+		}
+		if (pigZDir < 0) {
+			movePigZ -= 0.001f;
+		}
+
+		if (movePigX <= -15.f + rangeLimit) {
+			pigXDir = 1.f;
+
+			std::cout << pigXDir << std::endl;
+		}
+		if (movePigX >= -1.f - rangeLimit) {
+			pigXDir = -1.f;
+
+			std::cout << pigXDir << std::endl;
+		}
+		if (movePigZ <= -8.f + rangeLimit) {
+			pigZDir = 1.f;
+
+			std::cout << pigZDir << std::endl;
+		}
+		if (movePigZ >= 9.f - rangeLimit) {
+			pigZDir = -1.f;
+
+			std::cout << pigZDir << std::endl;
+		}
+
+		if (pigXDir > 0 and pigZDir > 0) {
+			rotateFacePig = 45.f;
+		}
+		if (pigXDir > 0 and pigZDir < 0) {
+			rotateFacePig = 135.f;
+		}
+		if (pigXDir < 0 and pigZDir > 0) {
+			rotateFacePig = -45.f;
+		}
+		if (pigXDir < 0 and pigZDir < 0) {
+			rotateFacePig = 225.f;
+		}
+	}
+
 	/*if (glm::length(dir) >= glm::epsilon<float>())
 		move(dir, moveSpeed * elapseTime);*/
 }
@@ -179,7 +181,8 @@ void Pig::draw() const
 	GLint worldLoc = glGetUniformLocation(shader, "modelTransform");
 	GLint colorLoc = glGetUniformLocation(shader, "colorTransform");
 
-	if (isBaby) {
+	if (isBaby) { // 아기 돼지
+
 		const glm::mat4 unitMat(1.f);
 		glm::mat4 moveFinal = glm::translate(unitMat, glm::vec3(movePigX, 0.0f, movePigZ));
 		glm::mat4 rotateDir = glm::rotate(unitMat, glm::radians(rotateFacePig), glm::vec3(0.f, 1.f, 0.f));
@@ -213,7 +216,7 @@ void Pig::draw() const
 
 			glm::mat4 moveBottomUp = glm::translate(unitMat, glm::vec3(0.f, 0.15f, 0.f));
 
-			glm::mat4 finalMat = moveFinal * rotateDir * moveBottomUp  * scaleMat * moveYMat;
+			glm::mat4 finalMat = moveFinal * rotateDir * moveBottomUp * scaleMat * moveYMat;
 
 			glUniformMatrix4fv(worldLoc, 1, GL_FALSE, glm::value_ptr(finalMat));
 			glUniform3f(colorLoc, 1.f, 0.5f, 0.7f);
@@ -331,7 +334,7 @@ void Pig::draw() const
 	}
 
 	//어른돼지
-	if (not isBaby and isAdult) {
+	else if (not isBaby) {
 		const glm::mat4 unitMat(1.f);
 		glm::mat4 moveFinal = glm::translate(unitMat, glm::vec3(movePigX, 0.f, movePigZ));
 		glm::mat4 rotateDir = glm::rotate(unitMat, glm::radians(rotateFacePig), glm::vec3(0.f, 1.f, 0.f));
@@ -367,7 +370,7 @@ void Pig::draw() const
 
 			glm::mat4 moveBottomUp = glm::translate(unitMat, glm::vec3(0.f, 0.25f, 0.f));
 
-			glm::mat4 finalMat = moveFinal * moveBottomUp * rotateDir * scaleMat * moveYMat;
+			glm::mat4 finalMat = moveFinal * rotateDir * moveBottomUp * scaleMat * moveYMat;
 
 			glUniformMatrix4fv(worldLoc, 1, GL_FALSE, glm::value_ptr(finalMat));
 			glUniform3f(colorLoc, 1.f, 0.5f, 0.7f);
@@ -404,7 +407,7 @@ void Pig::draw() const
 
 			glm::mat4 moveBottomUp = glm::translate(unitMat, glm::vec3(0.f, 0.4f, 0.5f));
 
-			glm::mat4 finalMat = moveFinal * moveBottomUp * rotateDir * scaleMat * moveYMat;
+			glm::mat4 finalMat = moveFinal * rotateDir * moveBottomUp * scaleMat * moveYMat;
 			glUniformMatrix4fv(worldLoc, 1, GL_FALSE, glm::value_ptr(finalMat));
 			glUniform3f(colorLoc, 1.f, 0.5f, 0.7f);
 			glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -416,7 +419,7 @@ void Pig::draw() const
 
 			glm::mat4 moveBottomUp = glm::translate(unitMat, glm::vec3(0.f, 0.55f, 0.75f));
 
-			glm::mat4 finalMat = moveFinal * moveBottomUp * rotateDir * scaleMat * moveYMat;
+			glm::mat4 finalMat = moveFinal * rotateDir * moveBottomUp * scaleMat * moveYMat;
 			glUniformMatrix4fv(worldLoc, 1, GL_FALSE, glm::value_ptr(finalMat));
 			glUniform3f(colorLoc, 1.f, 0.5f, 0.7f);
 			glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -487,7 +490,7 @@ void Pig::draw() const
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
 	}
-	
+
 
 	//std::cout << "뭐니.그려지니.?" << std::endl;
 }

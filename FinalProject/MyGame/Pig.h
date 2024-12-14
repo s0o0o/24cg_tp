@@ -12,8 +12,6 @@ private:
 	float rangeLimit;
 	float moveSpeed;
 
-	bool isBaby;
-	bool isAdult;
 
 	float pigXDir;
 	float pigZDir;
@@ -21,6 +19,7 @@ private:
 	float rangeX;
 	float rangeZ;
 
+	bool isNear;
 
 	float rotatePigLeftLeg;
 	float rotatePigRightLeg;
@@ -35,7 +34,9 @@ private:
 	bool isMaxRotatePig;
 
 	float rotateSpeed;
+	int feedNum;
 
+	
 public:
 	Pig();
 	virtual ~Pig();
@@ -47,6 +48,8 @@ public:
 
 	float movePigX;
 	float movePigZ;
+	
+
 };
 
 

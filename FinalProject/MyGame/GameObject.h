@@ -41,6 +41,10 @@ public:
 	void move(glm::vec3 dir, float value);
 	void moveForward(float value);
 
+	bool isNear;
+	int feedNum;
+	bool isBaby;
+
 protected:
 	static void initBuffer(GLuint* VAO, GLsizei* vertexCount, std::string objFilename);
 public:

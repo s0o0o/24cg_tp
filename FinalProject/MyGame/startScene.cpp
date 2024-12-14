@@ -496,7 +496,7 @@ std::vector<glm::vec3> startScene::readOBJ(std::string filename)
 
 	// c++ stream --> input output을 해주는 흐름?
 
-	srand(static_cast<unsigned int>(time(nullptr)));
+	//srand(static_cast<unsigned int>(time(nullptr)));
 
 	std::vector<glm::vec3> vertex;
 	std::vector<glm::vec3> color;
