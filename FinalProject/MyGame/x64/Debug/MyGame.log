@@ -1,14 +1,68 @@
-﻿  Scene.cpp
-C:\Users\yeons\Desktop\24-2\24-2-컴그\최종프로젝트\FinalProject\MyGame\Scene.cpp(1848,3): warning C4065: switch문에 'default'가 있으나 'case' 레이블이 없습니다.
-C:\Users\yeons\Desktop\24-2\24-2-컴그\최종프로젝트\FinalProject\MyGame\Scene.cpp(1929,34): warning C4267: '=': 'size_t'에서 'GLsizei'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\yeons\Desktop\24-2\24-2-컴그\최종프로젝트\FinalProject\MyGame\Scene.cpp(2372,34): warning C4267: '=': 'size_t'에서 'GLsizei'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  TownObject.cpp
-C:\Users\yeons\Desktop\24-2\24-2-컴그\최종프로젝트\FinalProject\MyGame\TownObject.cpp(12,13): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Alpaca.cpp
+  Chic.cpp
+  Fox.cpp
+  GameObject.cpp
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\GameObject.cpp(135,34): warning C4267: '=': 'size_t'에서 'GLsizei'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   main.cpp
+  Penguin.cpp
+  Pig.cpp
+  PlayerObject.cpp
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\PlayerObject.cpp(253,19): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\PlayerObject.cpp(254,19): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\PlayerObject.cpp(266,17): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\PlayerObject.cpp(267,17): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  RotateObject.cpp
+  Scene.cpp
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\Scene.cpp(1848,3): warning C4065: switch문에 'default'가 있으나 'case' 레이블이 없습니다.
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\Scene.cpp(1929,34): warning C4267: '=': 'size_t'에서 'GLsizei'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\Scene.cpp(2372,34): warning C4267: '=': 'size_t'에서 'GLsizei'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  startScene.cpp
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\startScene.cpp(203,3): warning C4065: switch문에 'default'가 있으나 'case' 레이블이 없습니다.
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\startScene.cpp(282,34): warning C4267: '=': 'size_t'에서 'GLsizei'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\startScene.cpp(675,34): warning C4267: '=': 'size_t'에서 'GLsizei'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TownObject.cpp
+C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\MyGame\TownObject.cpp(12,13): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다...
+libglew32d.lib(glew.obj) : warning LNK4099: '' PDB를 'libglew32d.lib(glew.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_init.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_init.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_main.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_main.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_window.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_window.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_display.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_display.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_callbacks.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_callbacks.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_init_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_init_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_window_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_window_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_gamemode.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_gamemode.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_structure.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_structure.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_joystick.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_joystick.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_input_devices.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_input_devices.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(xparsegeometry_repl.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(xparsegeometry_repl.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_misc.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_misc.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_main_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_main_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_state.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_state.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_gl2.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_gl2.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_display_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_display_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_spaceball.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_spaceball.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_gamemode_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_gamemode_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_menu.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_menu.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_structure_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_structure_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_joystick_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_joystick_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_input_devices_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_input_devices_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_cmap_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_cmap_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_spaceball_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_spaceball_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_cursor.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_cursor.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_menu_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_menu_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_state_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_state_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_ext.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_ext.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_font.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_font.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_cursor_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_cursor_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_overlay.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_overlay.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 freeglut_staticd.lib(fg_geometry.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_geometry.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 freeglut_staticd.lib(fg_teapot.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_teapot.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-freeglut_staticd.lib(fg_cmap_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_cmap_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-  MyGame.vcxproj -> C:\Users\yeons\Desktop\24-2\24-2-컴그\최종프로젝트\FinalProject\x64\Debug\MyGame.exe
+freeglut_staticd.lib(fg_videoresize.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_videoresize.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_ext_mswin.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_ext_mswin.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_font_data.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_font_data.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_stroke_roman.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_stroke_roman.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+freeglut_staticd.lib(fg_stroke_mono_roman.obj) : warning LNK4099: '' PDB를 'freeglut_staticd.lib(fg_stroke_mono_roman.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  MyGame.vcxproj -> C:\Users\yeons\Desktop\24-2\24-2-컴그\24cg_tp\FinalProject\x64\Debug\MyGame.exe
   'pwsh.exe'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
   배치 파일이 아닙니다.
